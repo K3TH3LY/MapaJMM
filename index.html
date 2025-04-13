@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mapa Interativo</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <style>
+    #map { height: 100vh; }
+    .accordion {
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      background-color: #f1f1f1;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+    .panel {
+      padding: 10px;
+      display: none;
+      background-color: #f9f9f9;
+    }
+    .blinking {
+      animation:  pulse 2s infinite;;
+    }
+    @keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-circle {
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: pulse 2s infinite;
+}
+    .blinking div {
+  animation: pulse 2s infinite;
+}
+    .leaflet-popup-content {
+      text-align: left;
+      white-space: normal;
+      word-wrap: break-word;
+      max-width: 400px;
+      min-width: 250px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .leaflet-popup-content ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .leaflet-popup-content li {
+      list-style-type: disc;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+const map = L.map('map').setView([0, 0], 2);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+const data = {
+  "Itália": { missionarios: [
+         "Andre Aguiar Lisboa", 
+         "Fabiano Nicodemo", 
+         "Fabio Pegas Pisa",
+         "João Caio Gutterres Bottega", 
+         "Luiz Cláudio Marteletto",
+         "Manoel Florencio Filho"
+        ], 
+    projetos: []
+},
+  "Angola": { missionarios: [
+         "Francisco Cassinda Epamba", 
+         "Rosângela Ferro Dias Teck de Gamba"
+        ],
+    projetos: [
+      "Congregação Batista do Calvário", 
+      "Escola Pamosi",
+      "PEPE", 
+      "Preparação de Professores para Escolas Teológicas"
+    ] 
+},
+  "Guiné-Bissau": { missionarios: [
+         "Adriana Justino do Nascimento",
+         "Adulai Balde", 
+         "Freddy Monteiro Ovando",
+         "José Roberto Dos Santos", 
+         "William Ricardo Viel"
+        ],
+    projetos: [
+      "Edificar",
+      "Empoderamento Linguístico",
+      "PEPE",
+      "Semeando Vida"
+    ] 
+},
+  "Romênia": { missionarios: [
+         "Gerson Tomaz Pereira"
+        ],
+    projetos: [
+
+    ]
+},
+  "Letônia": { missionarios: [
+         "Hans Gilson Behrsin",
+          "Peteris Elisan"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Quênia": { missionarios: [
+         "Jacqueline Matos Dos Santos Thupula"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Argentina": { missionarios: [
+         "João Luiz Dutra"
+        ],
+    projetos: [
+
+    ] 
+},
+  "Japão": { missionarios: [
+         "Jorge Luis Siqueira Do Nascimento"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Portugal": { missionarios: [
+         "Alcir Almeida De Souza",
+         "Cesar Augusto Corsete", 
+         "Claudio Elivan Santos da Silva", 
+         "Debora Anahi Vazquez Zarate", 
+         "Jose Calixto Patricio"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Colombia": { missionarios: [
+         "Daniela Anunciação Lima", 
+         "Debora Alice Bueno Muñoz", 
+         "Deglier Vasconcelos de Brito", 
+         "Lael Felipe Alves da Costa", 
+         "Luanne Maciel da Silva", 
+         "Melissa Gomes Pereira", 
+         "Sara Jane Rodrigues", 
+         "William Da Costa Freitas"
+        ],
+    projetos: [
+
+    ] 
+},
+  "Brasil": { missionarios: [
+         "Adel Khosravi", 
+         "Analzira Pereira Do Nascimento", 
+         "Joel Martiniano Pinto", 
+         "Luciana de Oliveira Nascimento", 
+         "Mauricio Barros Bastos", 
+         "Levi Correia Godinho", 
+         "Monica Felícia Peixoto", 
+         "Renata Santos De Oliveira", 
+         "Rodrigo da Cunha Carvalho", 
+         "Terezinha Aparecida de Lima Candieiro"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Ucrânia": { missionarios: [
+         "Anatoliy Shmilikhovskyy",
+         "Lyubomyr Matveiev"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Tailândia": { missionarios: [
+         "Marcia Isane Soares Fernandes"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Equador": { missionarios: [
+         "Marta do Carmo"
+        ],
+    projetos: [
+
+    ]
+},
+  "Peru": { missionarios: [
+         "Carlos Ricardo Rodríguez", 
+         "Pedro Carreon"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Chile": { missionarios: [
+         "Nilton de Freitas Antunes"
+        ], 
+projetos: [
+
+] 
+},
+  "Moçambique": { missionarios: [
+         "Edvaldo Marcolino", 
+         "Noemia Gabriel Cessito", 
+         "Rawderson Rangel Porto Pereira"
+        ], 
+    projetos: [
+     "English School", 
+     "Instituto Beira", 
+     "PEPE", 
+     "Sublime Tarefa", 
+     "Ummi", 
+     "Videira"] },
+  "Espanha": { missionarios: [
+         "Adoniram Judson Pires", 
+         "Armando de Oliveira Neto", 
+         "David Bianchi Ojeda", 
+         "Paulo Cesar Pagaciov"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Haiti": { missionarios: [
+         "Reginald Pyrhus"
+        ], 
+    projetos: [
+    
+    ] 
+},
+  "Timor Leste": { missionarios: [
+         "Silvania Maria Da Costa"
+        ], 
+    projetos: [
+
+    ] 
+},
+  "Guiné": { missionarios: [
+         "Vitor Rossetti"
+        ], 
+    projetos: [
+     "Esperança", 
+     "Estrela Brilhante", 
+     "Formação Teológica Básica", 
+     "Plantação de Igreja", 
+     "Semeando Vida", 
+     "PEPE"
+    ] 
+},
+  "São Tomé e Príncipe": { missionarios: [
+         "Abdulay De Souza Pereira Rosa", 
+         "Armindo Fausto", 
+         "Kamel Quaresma"
+        ], 
+    projetos: [
+     "Construção de templo e salas para o PEPE",
+     "Escolinha de Futebol Boa Semente", 
+     "Mãos Dadas", 
+     "PEPE", 
+     "Treinamento em Hermenêutica, Homilética e Direção de Culto"
+    ] 
+}
+};
+
+const coords = {
+  "Itália": [41.8719, 12.5674],
+  "Angola": [-11.2027, 17.8739],
+  "Guiné-Bissau": [11.8037, -15.1804],
+  "Romênia": [45.9432, 24.9668],
+  "Letônia": [56.8796, 24.6032],
+  "Quênia": [-0.0236, 37.9062],
+  "Argentina": [-38.4161, -63.6167],
+  "Japão": [36.2048, 138.2529],
+  "Portugal": [39.3999, -8.2245],
+  "Colombia": [4.5709, -74.2973],
+  "Brasil": [-14.235, -51.9253],
+  "Ucrânia": [48.3794, 31.1656],
+  "Tailândia": [15.8700, 100.9925],
+  "Equador": [-1.8312, -78.1834],
+  "Peru": [-9.19, -75.0152],
+  "Chile": [-35.6751, -71.5430],
+  "Moçambique": [-18.6657, 35.5296],
+  "Espanha": [40.4637, -3.7492],
+  "Haiti": [18.9712, -72.2852],
+  "Timor Leste": [-8.8742, 125.7275],
+  "Guiné": [9.9456, -9.6966],
+  "São Tomé e Príncipe": [0.1863, 6.6131]
+};
+
+function createPopupContent(country) {
+  const info = data[country];
+  let html = `<h3 style="margin-top: 0; font-size: 16px; font-weight: bold;">${country}</h3>`;
+
+  if (info.missionarios.length > 0) {
+    html += `<button class="accordion">Missionários</button>
+             <div class="panel"><ul>${info.missionarios.map(m => `<li>${m}</li>`).join("")}</ul></div>`;
+  }
+  if (info.projetos.length > 0) {
+    html += `<button class="accordion">Projetos</button>
+             <div class="panel"><ul>${info.projetos.map(p => `<li>${p}</li>`).join("")}</ul></div>`;
+  }
+  return html;
+}
+
+function addBlinkingMarker(country, lat, lng) {
+  const marker = L.marker([lat, lng], {
+    icon: L.divIcon({
+      className: '',  // Não é necessário usar 'blinking' aqui
+      iconSize: [20, 20],
+      iconAnchor: [10, 10],
+      html: '<div class="pulse-circle"></div>'  // Aplica a classe da animação
+    })
+  }).addTo(map);
+
+  const popup = L.popup().setContent(createPopupContent(country));
+  marker.bindPopup(popup);
+
+  marker.on("popupopen", function () {
+    setTimeout(() => {
+      const acc = document.getElementsByClassName("accordion");
+      for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          const panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    }, 100);
+  });
+}
+for (const country in coords) {
+  const [lat, lng] = coords[country];
+  addBlinkingMarker(country, lat, lng);
+}
+</script>
+</body>
+</html>
