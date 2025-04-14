@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mapa Junta de MIssões Mundiais</title>
+  <title>Mapa Junta de Missões Mundiais</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <style>
     #map { height: 100vh; }
@@ -26,6 +27,11 @@
     .blinking {
       animation:  pulse 2s infinite;;
     }
+    .transparent-icon {
+  background: transparent !important;
+  border: none !important;
+  display: block !important;
+}
     @keyframes pulse {
   0% {
     transform: scale(1);
@@ -42,7 +48,7 @@
 }
 
 .pulse-circle {
-  background-color: red;
+  background-color: rgb(255, 0, 0);
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -68,6 +74,98 @@
       list-style-type: disc;
       word-break: break-word;
     }
+    .danger-icon-wrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  animation: pulse 1.5s infinite;  /* Sincroniza a animação de pulso */
+}
+
+.danger-icon-outline {
+  font-size: 40px;
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(247, 133, 4);  /* Cor do contorno do ícone */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: glow-pulse 1.5s infinite; /* Animação de brilho */
+}
+
+.danger-icon-fill {
+  font-size: 40px;
+  color: white;  /* Cor da exclamação */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: pulse 1.5s infinite;  /* Sincroniza o pulso do ícone */
+  pointer-events: none;
+}
+
+@keyframes glow-pulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px rgb(255, 60, 0));
+  }
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px rgb(255, 60, 0));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px rgb(255, 102, 0));
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+  
+  .leaflet-popup-content {
+    text-align: left;
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 400px;
+    min-width: 250px;
+    font-size: 14px;
+    line-height: 1.5;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .leaflet-popup.popup-grande .leaflet-popup-content {
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .accordion {
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .panel {
+    padding: 10px;
+    display: none;
+    background-color: #f9f9f9;
+}
   </style>
 </head>
 <body>
@@ -80,6 +178,168 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const data = {
+    "África do Sul": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Angola": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Benin": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Botsuana": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Burkina Faso": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Cabo Verde": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Guiné": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Guiné-Bissau": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Moçambique": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Togo": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Espanha": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "França": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Itália": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Letônia": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Polônia": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Portugal": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Suíça": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Ucrânia": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Filipinas": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Nepal": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Timor Leste": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+  "Papua Nova Guiné": {
+    informacoes: [],
+    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
+    projetos: []
+  },
+   "El Salvador": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+},
+"Guatemala": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+},
+"Honduras": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+},
+"México": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+},
+"Nicarágua": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+},
+"Panamá": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+},
+"Paraguai": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+},
+"República Dominicana": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+},
+"Uruguai": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+},
+"Venezuela": {
+  missionarios: [],
+  projetos: [],
+  informacoes: []
+
+},
+
   "Itália": { missionarios: [
          "Andre Aguiar Lisboa", 
          "Fabiano Nicodemo", 
@@ -137,14 +397,27 @@ const data = {
 
     ] 
 },
-  "Argentina": { missionarios: [
+  "Argentina": { 
+    informacoes:[`
+  <img src="data:image/jpeg;base64,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" alt="argentina" style="width:100%;margin-top:10px;">
+  <p>A Argentina enfrenta uma <strong>grave crise econômica</strong>, que tem provocado aumento da <strong>pobreza</strong>, <strong>inflação</strong> descontrolada e <strong>desemprego</strong> crescente. Muitos cidadãos têm dificuldades para suprir suas necessidades básicas.</p>
+  <p>Essa instabilidade impacta diretamente nas famílias, com <strong>aumento da violência doméstica</strong>, <strong>abandono de crianças</strong> e casos de <strong>depressão</strong> e <strong>suicídio</strong>.</p>
+  <p>Apesar dos desafios, há sinais de esperança: <strong>igrejas evangélicas estão crescendo</strong>, especialmente nas áreas periféricas. Muitas delas têm desenvolvido trabalhos sociais relevantes, como <strong>acolhimento de crianças vulneráveis</strong> e <strong>distribuição de alimentos</strong>.</p>
+  <p>A necessidade de <strong>apoio emocional e espiritual</strong> é grande. Missionários têm atuado em regiões carentes, levando conforto, assistência e formação cristã.</p>
+`
+
+    ],
+    missionarios: [
          "João Luiz Dutra"
         ],
-    projetos: [
+    projetos: [ "PEPE",
 
     ] 
 },
-  "Japão": { missionarios: [
+  "Japão": { informaçoes:[
+
+  ],
+    missionarios: [
          "Jorge Luis Siqueira Do Nascimento"
         ], 
     projetos: [
@@ -162,21 +435,48 @@ const data = {
 
     ] 
 },
-  "Colombia": { missionarios: [
-         "Daniela Anunciação Lima", 
-         "Debora Alice Bueno Muñoz", 
-         "Deglier Vasconcelos de Brito", 
-         "Lael Felipe Alves da Costa", 
-         "Luanne Maciel da Silva", 
-         "Melissa Gomes Pereira", 
-         "Sara Jane Rodrigues", 
-         "William Da Costa Freitas"
-        ],
-    projetos: [
-
-    ] 
+  "Colombia": {
+  "informacoes": [`
+    <img src="https://revistashowdafe.com.br/wp-content/uploads/2023/08/colombia-by-flavia-carpio-unsplash.jpg" alt="colombia" style="width:100%;margin-top:10px;">
+    <p>O tráfico de drogas forçou muitas pessoas a se deslocarem de suas casas. Após décadas de violência extrema, a Colômbia experimenta uma relativa paz. Ainda há grandes problemas com guerrilha, grupos paramilitares e narcotráfico, mas há esperança de melhora.</p>
+    <p>A herança do período mais violento se faz presente no alto número de crianças que vivem nas ruas e de dependentes químicos. Cerca de seis milhões de colombianos foram expulsos de suas moradias tornando-se refugiados em seu próprio país.</p>
+    <p>Agora há a chegada de um grande número de venezuelanos, sendo o país que mais os recebe. As estimativas são de que já há mais de um milhão de venezuelanos na Colômbia.</p>
+    <p>As igrejas têm crescido no país, mas ainda não têm desempenhado o papel que se espera na proteção às crianças e no atendimento aos dependentes químicos.</p>
+    <p><strong>Ore por paz.</strong> Peça por visão para as necessidades sociais e espirituais. Clame pela situação dos refugiados.</p>
+    
+  `],
+  "missionarios": [
+    "Daniela Anunciação Lima", 
+    "Debora Alice Bueno Muñoz", 
+    "Deglier Vasconcelos de Brito", 
+    "Lael Felipe Alves da Costa", 
+    "Luanne Maciel da Silva", 
+    "Melissa Gomes Pereira", 
+    "Sara Jane Rodrigues", 
+    "William Da Costa Freitas"
+  ],
+  "projetos": [
+    "Calçada",
+    "Fundação PARE",
+    "Vida en La Calle",
+    "PEPE"
+  ]
 },
-  "Brasil": { missionarios: [
+  "Brasil": {
+    informacoes: [
+      `<img src="https://missoesnacionais.org.br/wp-content/uploads/2023/10/1907-1917-William-Buck-Bagby-e-Anne-Luther-Bagby-Pioneiros-em-Missoes-no-Brasil-Foto-International-Mission-Board-1-3.jpg" alt="William Buck Bagby e Anne Luther Bagby" style="width:100%;margin-top:10px;">
+      <p><strong>William e Anne Bagby</strong> foram figuras centrais no início das missões batistas no Brasil. Seu trabalho missionário abriu caminhos importantes para a expansão do evangelho no país e inspirou gerações de cristãos comprometidos com a missão.</p>
+    <p>O legado dos Bagby vai além das estruturas criadas — está vivo na fé de milhares de brasileiros que foram alcançados por meio do compromisso desses pioneiros.</p>
+    <ul>
+      <li>Organização da Junta de Evangelização Nacional, mais tarde, Junta de Missões Nacionais;</li>
+      <li>Criação da Sede da JMN, na cidade de Campos, RJ;</li>
+      <li>O primeiro missionário enviado foi Crispiniano Dario da Silva;</li>
+      <li>Organização de 2 igrejas, no Acre e em Santa Catarina;</li>
+      <li>Realização de 15 batismos em Paranaguá-PR, por William Buck Bagby.</li>
+    </ul>
+       `
+    ],
+    missionarios: [
          "Adel Khosravi", 
          "Analzira Pereira Do Nascimento", 
          "Joel Martiniano Pinto", 
@@ -190,7 +490,7 @@ const data = {
         ], 
     projetos: [
 
-    ] 
+    ],
 },
   "Ucrânia": { missionarios: [
          "Anatoliy Shmilikhovskyy",
@@ -290,81 +590,332 @@ projetos: [
      "Treinamento em Hermenêutica, Homilética e Direção de Culto"
     ] 
 }
-};
 
+};
+const riscoContinentes = {
+ "África":
+        [
+         "Aissatou Ba", 
+         "Albertina Chapo",
+         "Aloyse Sarr",
+         "Angelique Yande",
+         "Anita Assine Badiate",
+         "Anne Marie",
+         "Anne Tirza",
+         "Belinda Correia",
+         "Benoit Sambou",
+         "Bréhima Coulibaly",
+         "Bruno Rodrigues",
+         "Calixto Andjimi",
+         "Christiane Faye",
+         "Daniel Mounkcoro",
+         "Daniel Solano",
+         "Denise Marie",
+         "Doubassi Thera",
+         "Eduardo Mendes",
+         "Eli Costa",
+         "Etienne Mendy",
+         "Fatma Toure",
+         "Felicite Siga",
+         "Gustavo Celestin",
+         "Helene Ndong",
+         "Jean Baptiste",
+         "Jean Prem",
+         "Joaquim Ndong",
+         "Joel Santos",
+         "Josabed Dembele",
+         "Joseph Curt",
+         "Joshua Souza",
+         "Juliete Diouf",
+         "Khalil Mubarak",
+         "Laura Silva",
+         "Lia Coutinho Lemos",
+         "Ludimila Gaspar Schimidt",
+         "Luise Diouf",
+         "Malik Rachid",
+         "Manoel Soares",
+         "Mansour Diatta",
+         "Margarete Diouf",
+         "Maria Muongo",
+         "Mariana Lima",
+         "Marie Angel",
+         "Mohammed Dansoko",
+         "Natã Assis",
+         "Neves Miguel Bata",
+         "Nicanor Manga",
+         "Nicole Eyega",
+         "Noemi Concepcion Ndong",
+         "Raimundo Mendes",
+         "Rigobert Diedhiou",
+         "Rosalie Marena",
+         "Rosimeri Francisco",
+         "Silas Fernandes",
+         "Sitapha Diatta",
+         "Sophia Castro",
+         "Valeriana Asue",
+         "Viviane Manga",
+         "Yasmim Gazale",
+         "Youssouful Agil",
+        ],
+ "Ásia":[
+         "Aaron Costa",
+         "Ael Oliveira",
+         "Ana Thaís Assis",
+         "Au Sam Mun",
+         "Benjamim Vilela", 
+         "Bhawani Prasad",
+         "Camila Marques",
+         "Daniel Oliver",
+         "Davi Oliveira",
+         "Ernesto Barbosa",
+         "Ester Beauty",
+         "Fábio Costa",
+         "Faiaz Bahat",
+         "Hadassa Lewis",
+         "Halima Ferreira",
+         "Haná Santiago",
+         "Heitor Sales",
+         "Hoang Ramos",
+         "Igor Oliveira",
+         "Jessé Carvalho",
+         "Joana Ferreira",
+         "João Silva",
+         "Johnny Massey",
+         "Josué Lima",
+         "Joy Massey",
+         "Levi Lopes",
+         "Madalena Marques",
+         "Martinho",
+         "Marzuq Marques",
+         "Mikhael Greenwald",
+         "Mishri Lal",
+         "Natanael Naahman",
+         "Quézia Carvalho",
+         "Raman Massey",
+         "Rami",
+         "Rasha",
+         "Ricardo Dias",
+         "Riham",
+         "Sahir Usman",
+         "Shahnawar Rather",
+         "Sonu Massey",
+         "Wajih Yagoot", 
+         "Yan Lima"
+        ],
+  "Oriente Médio": ["Missionária A", "Missionário B"]
+};
 const coords = {
-  "Itália": [41.8719, 12.5674],
+  "Benin": [9.3075, 2.3158],
+  "Botsuana": [-22.3285, 24.6849],
+  "Burkina Faso": [12.2383, -1.5616],
+  "Cabo Verde": [16.5388, -23.0418],
+  "Togo": [8.6195, 0.8248],
+  "Polônia": [51.9194, 19.1451],
+  "Suíça": [46.8182, 8.2275],
+  "Filipinas": [12.8797, 121.7740],
+  "Nepal": [28.3949, 84.1240],
+  "Papua Nova Guiné": [-6.3149, 143.9555],
   "Angola": [-11.2027, 17.8739],
-  "Guiné-Bissau": [11.8037, -15.1804],
-  "Romênia": [45.9432, 24.9668],
-  "Letônia": [56.8796, 24.6032],
-  "Quênia": [-0.0236, 37.9062],
   "Argentina": [-38.4161, -63.6167],
-  "Japão": [36.2048, 138.2529],
-  "Portugal": [39.3999, -8.2245],
-  "Colombia": [4.5709, -74.2973],
+  "Bolívia": [-16.2902, -63.5887],
   "Brasil": [-14.235, -51.9253],
-  "Ucrânia": [48.3794, 31.1656],
-  "Tailândia": [15.8700, 100.9925],
-  "Equador": [-1.8312, -78.1834],
-  "Peru": [-9.19, -75.0152],
   "Chile": [-35.6751, -71.5430],
-  "Moçambique": [-18.6657, 35.5296],
+  "Colombia": [4.5709, -74.2973],
+  "Equador": [-1.8312, -78.1834],
+  "El Salvador": [13.7942, -88.8965],
   "Espanha": [40.4637, -3.7492],
-  "Haiti": [18.9712, -72.2852],
-  "Timor Leste": [-8.8742, 125.7275],
+  "Guatemala": [15.7835, -90.2308],
   "Guiné": [9.9456, -9.6966],
-  "São Tomé e Príncipe": [0.1863, 6.6131]
+  "Guiné-Bissau": [11.8037, -15.1804],
+  "Haiti": [18.9712, -72.2852],
+  "Honduras": [15.1999, -86.2419],
+  "Itália": [41.8719, 12.5674],
+  "Japão": [36.2048, 138.2529],
+  "Letônia": [56.8796, 24.6032],
+  "México": [23.6345, -102.5528],
+  "Moçambique": [-18.6657, 35.5296],
+  "Nicarágua": [12.8654, -85.2072],
+  "Panamá": [8.538, -80.7821],
+  "Paraguai": [-23.4425, -58.4438],
+  "Peru": [-9.19, -75.0152],
+  "Portugal": [39.3999, -8.2245],
+  "Quênia": [-0.0236, 37.9062],
+  "República Dominicana": [18.7357, -70.1627],
+  "Romênia": [45.9432, 24.9668],
+  "São Tomé e Príncipe": [0.1863, 6.6131],
+  "Tailândia": [15.8700, 100.9925],
+  "Timor Leste": [-8.8742, 125.7275],
+  "Ucrânia": [48.3794, 31.1656],
+  "Uruguai": [-32.5228, -55.7658],
+  "Venezuela": [6.4238, -66.5897],
+  "Benin": [9.3075, 2.3158],
+  "Botsuana": [-22.3285, 24.6849],
+  "Burkina Faso": [12.2383, -1.5616],
+  "Cabo Verde": [16.5388, -23.0418],
+  "Togo": [8.6195, 0.8248],
+  "Polônia": [51.9194, 19.1451],
+  "Suíça": [46.8182, 8.2275],
+  "Filipinas": [12.8797, 121.7740],
+  "Nepal": [28.3949, 84.1240],
+  "Papua Nova Guiné": [-6.3149, 143.9555]
+};
+const riscoCoords = {
+  "África": [9.331734649367618, 23.527939521223143],
+  "Ásia": [63.270140376411554, 82.34549367708495],
+  "Oriente Médio": [34.51718305759104, 64.76739166412801]
 };
 
 function createPopupContent(country) {
   const info = data[country];
   let html = `<h3 style="margin-top: 0; font-size: 16px; font-weight: bold;">${country}</h3>`;
 
-  if (info.missionarios.length > 0) {
-    html += `<button class="accordion">Missionários</button>
-             <div class="panel"><ul>${info.missionarios.map(m => `<li>${m}</li>`).join("")}</ul></div>`;
+  if (info.informacoes && info.informacoes.length > 0) {
+    html += `<button class="accordion">Informações</button>
+             <div class="panel">${info.informacoes.join("")}</div>`;
   }
+
   if (info.projetos.length > 0) {
     html += `<button class="accordion">Projetos</button>
              <div class="panel"><ul>${info.projetos.map(p => `<li>${p}</li>`).join("")}</ul></div>`;
   }
+
+  if (info.missionarios.length > 0) {
+    html += `<button class="accordion">Missionários</button>
+             <div class="panel"><ul>${info.missionarios.map(m => `<li>${m}</li>`).join("")}</ul></div>`;
+  }
+
   return html;
 }
 
+
 function addBlinkingMarker(country, lat, lng) {
+  const info = data[country];
+  const hasInfo = info.informacoes && info.informacoes.length > 0;
+
   const marker = L.marker([lat, lng], {
-    icon: L.divIcon({
-      className: '',  // Não é necessário usar 'blinking' aqui
-      iconSize: [20, 20],
-      iconAnchor: [10, 10],
-      html: '<div class="pulse-circle"></div>'  // Aplica a classe da animação
-    })
+  icon: L.divIcon({
+    className: 'transparent-icon', // usamos uma classe personalizada
+    html: '<div class="pulse-circle"></div>',
+    iconSize: [20, 20],
+    iconAnchor: [10, 10]
+  })
   }).addTo(map);
 
-  const popup = L.popup().setContent(createPopupContent(country));
+  const popup = L.popup({
+    className: hasInfo ? 'popup-grande' : ''
+  }).setContent(createPopupContent(country));
+
   marker.bindPopup(popup);
 
   marker.on("popupopen", function () {
     setTimeout(() => {
-      const acc = document.getElementsByClassName("accordion");
-      for (let i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-          this.classList.toggle("active");
-          const panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
-          } else {
-            panel.style.display = "block";
-          }
-        });
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      const popupContainer = document.querySelector(".leaflet-popup-content");
+
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+        // Volta ao tamanho padrão
+        popupContainer.style.maxWidth = "400px";
+        popupContainer.style.minWidth = "250px";
+        popupContainer.style.maxHeight = "none";
+      } else {
+        panel.style.display = "block";
+
+        // Se o painel for "Informações", aumenta o tamanho
+        if (this.textContent.includes("Informações")) {
+          popupContainer.style.maxWidth = "700px";
+          popupContainer.style.minWidth = "400px";
+          popupContainer.style.maxHeight = "70vh";
+        }
       }
-    }, 100);
+    });
+  }
+}, 100);
   });
 }
+const riscoInformacoes = {
+  "África": `
+    <p><strong>Atenção:</strong> Em diversas regiões da África, missionários enfrentam riscos relacionados à instabilidade política, conflitos armados e perseguição religiosa.</p>
+    <p>Ore por proteção, sabedoria e estratégias eficazes para os que atuam em ambientes hostis.</p>
+  `,
+  "Ásia": `
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEBIQEBIQFhAPFRAQDxAQDxUQDxAQFRUWFhUVFRcYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQFysdHR0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tLf/AABEIAKgBKwMBEQACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAACAwEEAAUGBwj/xAA8EAABBAADBQcCBAUCBwEAAAABAAIDEQQSIQUxQVFhBhMicYGRoTJSFEKxwQcjYtHwcpIlM1NzgrLhJP/EABsBAAMBAQEBAQAAAAAAAAAAAAABAgMEBQYH/8QALBEAAgIBBAIBBAIBBQEAAAAAAAECEQMEEiExBUETIjJRYQZxFDNCUoGRI//aAAwDAQACEQMRAD8A0AXhH1oQCBk0gDEhktCACpAEUgVGZUWOicqAMypAZSYUYSEAE0JMYVJATlQgKmKHiatEQ+x9ILFvfSQm6A70p0Lcwe8KBbgbKomyCgRFICiaSEzKQBlJjsghBI7CjUpM0iizSkuivhh4iqM12W1DLoxIKAfY3BMKIqx4gFViaEuw/wBp9EyKAD3N3/KKJtofHLalotSGpFFKF9iwqaEmOSKMpIETSBkhAEpIDAgZKBEoGYSgQl0nAJhZLIb1d7JjoYCFLAYAkVQdIAp40eJqtMzl2PDUrNkuBM7NU0zOcRfdp2RRGRAqJyKgogtQFEUkKhjI7SKUQxCix7DO5RYbDPw4RYKAyKEBJstIYQhDZWww8RTZiuyw8KTQwC0AMa1SxhPYDvpOxMQ7Dt4GvJUmQ0L7o7iQR8qrE0KZHTqSbJS5LVKDSjVbOadTwWsjOJdWZoSgCQgYQCGBNJAYgZKABeaCBCG27XggB0beACBpDmRnihstIMRhSFGUgDAkBWxzdW+q0RnLsstbokbJcGZUDoFzExOItzU7I2gFqdktCyEyWRSRKLELdFJqg6QMykWBlJAEAgZKaBlfCjxn1TZiuy4We6zNKA7g8/hOwozuOZPumFAviAF0T6oJfADC08EyLHdyK0U2WuQe7AQKiKQBRjFaBaNkpDFJRiACCBhBIZKAMQBlIAhzbQJgwxkCvW0mxpDwEiic6AsnXhSBk927okATIzxr0SbGV9ot+n1WkSJlhg0CGbR6CASGYWoChbmpioWWqiWhbmJmTQFIJofCNFLNIh0kUZSBEgICjEDMIQmJoRh/r9030ZLs2DVmak2gTYNWUybCpFhRSxGHrUKkZSiRBPwKGgjKhxUml2DSAooNWhIYSKMQAYSGSgDAkBiADCdgYlYBtSGDNJWg3p0AWHh4neUmVQ9wSGE0oAJJjRU2kNG+ZVxImPiHhHkEM2j0MASKJpA6ALEAA+Ok0yWhTo1VmbQksTM6HQt0SZaGUpGQAnYiaSAikDMTEyvD9fuq9GK7LwWRoZaESxscZJpoJJ4AWVS5MsuSGKO6bpBy4CUDMWPA5kFX8bro5IeS005bY5Ff9lMuI37lHR1uRWxEP5m+apCasCHEcCjaCdD845j3S2l7kUgmMkFAEoGGCkBgToZISAxAE2lQBAp0AEk1aDelQWFBHXidv3pjQ1sxP0jTqobG5UXRhJQMxY/LzyGlNon5YLuSFUnZoEDwSKRV2iPCPNaRM8g/DfS3yCGbwX0oeAoLoINQFBiO9ANTuRYm0lyHjMA+M1I1zSd1jeiyIZIT+12VHxqkymiu5iozoOJuiGCGZEh0DlQKiC1AiMqAIpMGV4R/MPqhsxXZbcoKYzCxlxDRvcQB5lOrOfPmjhxSyS6irOpwuGbGKbQ+550Lj58B0XsabTxxR3zPxzyvltV5PO1Fvb6SAwm0WSSPbGSTF9TvyHhoeKuWohL6VExz+L1OijHNJtNmu27gxQkaAATTwNwcdQR56rzNRi2ytdM+8/i3mJ6zG8OV3KPT/Rz90D0WKPrkyhiwCMw37itIkSKVFaUZ2y2sbOogtJ4osBgJSAK0hi8TLlbY50qiiZOir+Md09lptM/kJ/Fu5j2RsH8hP4p3P4S2BvIdiX8/hG0N4+B+gc7UkqWjSLLcxum896zZZ0HZyFrTmNZgLbfAXVjqsZs83X5pL6YnRDHDdmv1WdM8PJDJLlmp7QYAACZgoHR4G7XcVcWeh4bXylklp8j5XRoB9fotD6P2L2g3w+quJGToPC/SPJKR0Q+1FpgUljmNSE2d52L2Szu+9c0F5cQ0kbh0XdpNPGf1SPm/J6mbybYukO7cYUOha7S2u5am+AWesxqE1QvE5Kytfk88lYuZH0nZVexWS0FGxISQZakVQJamKgS1MVAkIECQgTRWh/5nuhmHstlIqRd2O4CWO+depBA+Vrirejw/PQlLx+VR7o6eXCskjMcgtjxThxHIjqF9FrcW7Cq9H5J4rU/42aORejjZGTbOmzDxwy6XubI0cP6XheKri7aP0af+N5rTNRdSRu9o4xj8MHMNtlc3Lz8NlwPIjQLTVzjKEaPI/injs2n1+XeqUVRy79x9VwI/QF7KR+grWJDfBVJWpFllc51EhDAkKQJQMTjfp9QrgRPooOWxzAuKdDDa5IYYQCLI+hvmf1WbN4lt31NJ3LNo19o6YOjGFZLna0g90QXUbvdXssZRPEz5Jf5MoNcEMhf9QY83qDTiCpownnxRTTaNptt9YZrT9TsunKtUkji8NieTyDyxdpHLs+v0K0PtHJWBtH6PUKoET6Mwf0hNm8Oi9GoZoXcBFmeBzSZz55uMGz1nCYdsbGsaKDQAvewQUIJI+NyTc5OTK+2MGJYnMPmPMLl10N0bXo102X45qR5rtLCFh1B9l5UXZ9Xgyqas1T2qzoJa1ABUgCMqABc1BLFOCYgHJoTKRkDHku3K6OZumMjxzHGhdndYUuNBvTLULkhSipxcX0y5iu0k0bRTGECszjdu58dCea9GGvyKO0+Mz/w3T7pyhJq/RtJ9oYeSEh/iZI0Ex0cwJFjXgQeK1y6vFPHVcnj+K/j/AJPT6tTXEV3+0cRMHQutptjjprv6HqvPb3I/RFBw5HxzBzSRyPoootPgqE+B3oriQysVoZlpYHWYEAFaQGByKCxOLd4D6fqtIIib4KBO5anOKfImS2THIiikx7XKWUi1fgHmVDNojcXKRXKgpo0fRTkuVwoGxppqm1wYbXkZ22D7RtigjjyPzRtDfr8JI466rGj5bW/xnNmzufy1FlI7UfNbpK/pA3NHRJxPpvF6LHo8ahD/ALf5NS+Ytlsn6T8ck64Oy+S7jXB0ZI3WERRUuUZg3eEeyGbQ6LsRUmiN1sDCySSju2k5SC47mgdSkuWkjh12WEMbUn2ej7Q2pDh2Z55GsbwzHU+Q3le7vUUrPloYpZHUVZzsP8RsC52UulaPvfH4PiyPZZPUQlaZ1Px+aKs13afEMkOeJzXMIGVzCC0ihqCN68V1udHreOi4xqXZy7mqj1jI2k8PZAWEAgAmxE11UuREsiSs2O29j/h2Rgm3yWTpQaABp7lCZyabVfPKXHCNG8LQ7KFOTEzU49hJJHBaxOTIirgj/Mb1NKpdGcOzeMbSwOhIRtF1ROvyVRIycDoHNMbT4tw46KWVHoF8YILXatO8f5xQmJxs0s8ToH2NWO0B5jkeq1XJi1Qc8jCy2munFWkZtiQqILIKxOsy0gMtOhCZJFVENipn20qokyK1rQyESb0GbIYUDTLTDokaIu4NuZuu4FZM2gOx0oDK56BNIuUlRWwWIDHA5qHGt6bQsU0pG4nkicwuBBOlA/UefqskjonKLRq3Ytzfp0VVZzObXQIxjnB2aiTWpAsa8KVbRqdjYJSAW8D+qTRabLuGloUs2jeD4L8MlqGjeJ3HYTFVbAPE54Liftrh7FTie3NE8Ly8HakV/wCLGyCWMxYeajAicze2idHDlr+y9XUx/wBxzeNyq3D88nlWtrlPV9npGytgzRYFhkGrrlaOLWu1ynrxXJmg4O2uzDHqoPJS9AbL2a6aQNaLFjMLrw3qklKTqKOrU6hYoXZv9odn+6inewgDKKFbgN4B6pbJptNHnYtdvnFP8mk2HsozShl0N7nVdAK4R3ukd+s1fwwtdnbM7Ow0AW3RDr3ag37Lvx6CPbZ4E9bklZo+38esTujhXsubVRUZpI9Hw0vuOIkWSPdEOKCGarGzZSeeq2ijjySNa2YtNtNHmtKOdyYDsQ/7ne5RtQt7AfO4ii4kciShqgTbOiwzaY0cgFzyOuHQxQWDKwOaWuFtO8fuORVxYmrRz2Owzo3UfpP0u59D1W8Wcs4tBNnFKzMtkrA6iLToVgPkTolsrueqM7AcdChAxJK0MmJKCTEDGxur1QNM2ezphRHG7+AFlJG8JcFXaL7kPQClUULIxLRpaoyRbiJpS0bIiRCEw8G2yW/dVeYQy4Ky7Lh8oa4fS/de8HiCs7OjbQcba1SZcTYYaQAWa13WVmzdM6Ds9j2xSCRxoCvIjj8LOmmmjh1uL5IUR227cxYjDvwsYslzSZQfBTXWK4kr0pZnkgk0ebpdI8M97ZwezMUGTMkc0ODHNcWO+l4BstPQrPrk7pfUmr7PeNhbbgxsdx6ObQfE6szdPkdV1yUM8DwM2DJglz/6UNmhuFxroToycXGevL9fhcelqGZxZ1ZnLNp1P/j2dNiYGvY5jhbXCiF6GbEpRa/J5sJuMk16K+ztmRwimN1O8k2Ss8Gmjj59muXPPJ9zLhXRKSgrZiavamBjnoPBOWy3WtV89qdUsmThHVgyyxcxZwO3tmxxGOi6n5mu11Dm18aqYSZ9Fo88sl36ObxZyl3S1vE6JcI52V1m+a3icM3YkqjIWUAkbjC4RgANWaBsrKUmdEIIvArNmqJtSBFpjQjHZchDhYPDjfMcitIkzSo0ZwT/AMtFvA2BY8juWtnPsLbnKC7FPkVJEtiXSJkNgWmIlx0QkDK7iqM2QgRgQASBosYJ1PCmSNYD9pw07MNx/VKI5qyq0KyEi9GPCFDNfQD0IRmEfTgeRCGaQ7NnPKKaz/XXQ6OHwSszpb4ExSWEqJUi5G9oYBvO86aBG00U6NLtPHuc4tBpjdKGgJ4lbRxo48uVtlHMtKMdzGROSaGmbLB41zCC1zmuG4tcWkeoWbtdG6aap8nabB2u/EhkMhc6WF2aJ9kvLTvBPGjS5ZtqaZlPFCEZNcJo9dZuC96PMUfNPslUIGXcufV/6TGilNiGxsdI76WAuJGpoLxdM4R5as2jFzkor2eUbVx7pXZ3HXxHTQanlw4J1bPrMWJY40jSbRkLgeJNXzWsULI+DSuG/otkcUhLimSwChiN5BMMo14BYyR1x6Gtfe5TRokEXJUPaLll0NKkgoo4x/gHPitIoxnwVWjRaUYbmFI9TQ2VZZqVJENixKE9pNhgpUMIlCAS5UQyKQIIBA6CCB0MjClmkezYYtwLfJSjSQmEaJsSRIkKQxT3ppEsGN1FEhxZuHtuPvdLB9gQG/oFl7OlrizXslrcrox3B/iiBapITmahzrJPPVbJHO2YgEG0pMaLMblLRqmdL2NxpixcL7oZ2td/pd4T+q5cq6/sNRDfikj3cE30r5XrKTUv0fM0MtbCBfu13LLLFSi1LoaOZ7X7RbFA+IC3SMIFbgCav9V42TZB7InpaDBLJNS9I8rxD9yaR9FJlNzt/kf0Vowka130laI55FVxVIzYCbEi9C/QLNnTCXBbikpTRqslAuxCe0fygukRRPyCZtQVaRnKVldrlRkUTP1PynRLkKc61SM2w+7OUO4EkA9RV/qEDriyWlKgRfEA7gSfmz1d8FnfNHS8aWJSKio5qGsZaLGkH3aVj2hMhvciy1CxhhLTqldlKNDXahCBkNFN9aTGjGjQ+VpUMrgEpohowhDBI2xly4csI1to9T4q9BXuskuTql9hrgFaOYXN9JVohlELQzCSKDagY1pUspM22yH1JHoT44zQ3nxDQdVlJWbSf0P+j6JkkDW5naACz0C9GVJKTPlkm3SNBN2ygbuD3VyoA/K53ro+kejHxeaRZ2Rt5mK7xrWkZGguvrYr4QtR8sXwYajSSwNbvZzPa/xNc8Xl7tobe8UTenBeTX/0s9Tx30po8+mK6EejJlWQ0CehVozKUn0K0jGRSeVaMWC1DEjYQQkBZNmqGHMdwQMUMO69ydgQ99b697TQN0LdOCqIcitmKYWa4SLQwsMSdEh2NGIOXJQy5s3W6pBW7ijA4cvlJistNxZ7vu6GW83W1Fc2arK3Hb6IaRyCogMPUlWEH2iirNrsCJr5MjiAXD+WSabmHA+azkbQaRucb2fneXlrL7sWa4jfp6KVIc5x/JzjgtjMAoGHG35BRY0dZsHs+Bh34iQeENLjfIarnlkV0HyRhJR9s5B7szy7dmcT5WVsuhN2x+KnDqA3DMfUn+wCSRpKf00Vmvo/qOiqjJMjGZaOUggixzHQ9VURSo1wWhiEkxkgoCwgUgTNls+Qhza35m5fOxXyokbxdpo+gIJpnRv75rGt7s7jrda+i3hknNPd0eC4wWRKP5PJXzcBqRwGpXmUfYKSSN/2L2k6KZzcjj3wDRYIIINi+mpWuPLsTVHm+SxRypO+h/aV0xLjK1kYkGta6jlzWDlbsnRrHtqLujmXbHkJ4V10PstFI7OGLl2KaOZwAOl2EbxqCZrdq7P7uOrvwl4PMNcGn/2C0hIyywSRzzit0jiZb2TCHPtxAawZjfwpmXiSb5NnLiYm6NObyFD5We1m8tq6KsmOP5QB8lVtMm0FsyRzpLJvKCa4WpkjbAk3ZcxOBZI3O3wuIv8Ap9VMW0dWTTRmrRoZsOW6ncdzhq0+q2izzZ43HsVXmtDI11KjMJjUAh3dEVpvSKJMZ5FIKJagY5qQw0hhsYkxpFqGLispm0UesfwznzYbEMeSZGPN5tXZS3T5BWZ5+ttZInmGLipx8yt4vhHpUILVRIcDCXNbzIHuaUt0UuD0DtnDLhcBDCHaSZ2ymtCCLpcag3Pk5MWRZZykeaPau5GzFZU6EQWpi5BcqQci0CowIYGJCZloEXsF9TbFiwaNgEA6rPJ0dGOLs7ibtbIYe5LIu7oCjncdN1knVc6jL8jWkhGe/wBnKuxrg7M0kG7BaaI8lptNpTNvg8bM8Zn4+KMAA/zJSZPKgLJUOFmUppKqsq4zb0jScuMleRoCIy0Hyzapxxr2K410a2TbWIO+eU+b1p8cSd7XQk7Tm/6snM+Io+OI/lkThdpubKx8hc9rbtjnWHN+3XhdH0T2JCeWT7NcStEZMjMgRBeeaKFbBzlOgslsxG4keRpFIFJrpk/iH/c7/cUtqH8svyBJO48TXK9E6JeRvsETHmfdMViwVRITUDQxgJO/md6kom0ASAkAxoSKocxqVlIfGOilstI22Gw9EZh4QM2mv+FZvk6IxO7/AIbgPmxZFhrwyhxo2udpue1Hm+R4lFo5HbWy3NxEzGg017wBVANvT4pdMeOD0IfXBS/KKUOzi69W00ZnG7oeQTcilAsYHYUk0c0kYtsAtxH+clLTZGTJCFKT7N1tXb85EcWIiY9mHDc8UgILnZKBcRu0Nqbfswjpoq3B1ZrO0s2Ckiw5wsXdS0/v2AkhpsUC4/VxIPIrotUqIxQyRb3u/wAHNFgSs1aAeAnZLJgAzC/8Kdlwr2RPVHwgE+4STHOioVZgwUhGDehlR7Nph8RRB3gabgf1WcjsXBaO0xro7XTRrB+yjaNzKeePlJ/ub/ZPkhiJyOF113qkjOQotTM2TYHNFARmb1RQiCG8ygRkZAvdqK1G7qOqYA9237gqEEIm82+pKCWMbhL3GI/+f/1KyGwJcK4cGejr/dMdiDE7l8phQDo3ckDoHunckCorgqibCakUmHaAsJpSCxrCgpFr8QTvr2UstMfh/FoG+2qhlpFqPD9SK06rNsujYYGB95WHU7hzKhyo2R0HZnE4qJ75MP3RIpjong3Id4oN4jzUx+7ccerhGdKRQ26+eSd752hr3kFzAfCPlXfJ14VGMFGLtInYULu+aO573NoYwac4dCkuWPK6g+a/Z6DsLvopMQ84KRscxjc2Nnd+EtblNgkb967McZJ8o8XUKEoxSyJtGo7c42AxvZ+HmjxEtG3xAB3Cy66NdFGZRu6o6NDDJf3Jo81liP7KLPQlEqlhTMmhb2qiGAUAbTZ2FEkZLt9kArNypnXixqULZonDmt0cUlzQySGmsd94JHoaSsco0gsA25ohwMkYPlmCmb4DGrkkdntjBhsEhDQKAOg3ahcsZ8noyiqOQcV0ro5WwC5FCtFyPGYVjLyukfyewtb+tKdrD5caX7NViJ8xsNa0cmCgtFGjnlO+hWdMm2Z3iAsISJDsnOmOwcyBGZkCILkUQxZeqoDA/qUBZOc8z7oHZHeHmUBYoFUQOw8gGawDmaWi+BJBzDqK+UmWhjWJDoa1gSGkOYwcgpbNFEfGwcgpZoolyDQ6aeWih8mqSLneWbrVZtGiRtdkOqRnMuaAftN71mxZVUGz0vZPZ5+HkdIJnCPeWACjzuwurDppxe5vg8LNqo5Vt28mv2tsxmLxcdBrWFrnONU+QNNfBr3WbjLJPhGuDUPDjftmy2J2Tjgc2QnM9pzAgUAaIodNfgLqxaVxluZjqNdLKtvSOlC70eecp292S+eNrmamIPJHEjT+y4dXF2mj1fF54424y9nkeMYuSLPbyFF7easwaFSlvJ18dQmTRjGA/kPq6krGoWbbZ0eVtdSfJZPs7cS2xo5/aA/mv8yuqPR5uX7mXMe3/wDLhXf95ns7RZxfJpk+xMZ2PwHf42CO6pxkPlGC79gpzuoM53Lb9R6J2phDcHNTR9BHLeQvOxSuSN4ZHI8lkJXrIzd2LL0yW2ILlSMmMinA3i0qGmhhxbftSovfEH8Qz7UUxbkQZo/tKdC3IzvI+TkqDcZnj/qRQWiWuh4l3yimLcMBw/N/yglsF4g4F3uf7KgQvJF9x/z0S5K4ByM+8oDgzKz7/hMKK7VRAYQNDWyKWirCE3RKilIaJ0qK3BtxB6JbQ+Rjm4h3NKhrIx0M7huJUtFrIzoeycxOMgzklucWDqNxWOSkrKySbxyPd5G5mEA/UN/mF6bjvx8ez5uLqRq9nNILGPA7yMSNzNaQ0tBFUeoINWscMWpcm85XZtyarrou3o5wkIRrdsNeI5nB9fyXhorUPo+K/wBlhnfDN8Fb4r9nh2OC82J9Vk5KMo8S1MWC2JJsFAssb00UWbxih8RJNAeyg1RoNpMyyvB4OK6YHmZuJM2k9HZcR/MzEPZ6Frj+4WS4yFN3Esfw7lazaUDnPDG1KCToHEsIDT5/sp1SbxujlypuDo9A7Wi8NMB9pXBgVSVm2FHK7L2vs47Mdh5Y424x0T4++dCD/McCGvzDXTTVeldGU8OR5dyfBxOOLMjGtILm95nc0aOBIy/utI2a5Ko1ZK2RzEEoEQSgCMyAMzIECSgdmWgLMtAjLQBhKCbItA7MtAWZaAscEFhWgZIKQBhAw2qRoY0JWOhrUmUizGFLZaR0XZRhGKgc4END25iRoG8SVhkpqjTJF/E6PeonChVVpVG9F62KS2rk+aadkTyhjXPO5oJPkFUpKKsFbdBhNcoRiAKW2cIJYHxn8w0I3hw1afQgLHUfYzbTz2ZFI8x2xCMsYcGteczZxVOcb0d/ppeTFn02FuV316OLxTcryBrRIB5gHRbJg1yMaUmaInOkUmW8GOPE/opZrFGl7QRkTkkHxBpB56Ut8cvpPO1K+saHf8OqxYxm7iAYD/b4Sr6yF0yx2L2Q3F4xmHe5zWubI4uZWYZW2Kvqlm+1mOTK8cdyPQ+1mxY8NgpWRZ67pwJe8uJ/Yei87DK50PTZ5ZG2zxx4XrIuV2KerRnIrOVIzYDkCIQJkoEYgCCgCCgDEAYgDEAQUAQmBiYH/9k=" alt="perseguição na Ásia" style="width:100%;margin-top:10px;">
+
+      <p><strong>Atenção:</strong> Em muitos países da África e Ásia, seguir a Cristo pode custar caro: há perseguição por parte de extremistas e até dos próprios governos. Por isso, igrejas e cristãos precisam se reunir em segredo. Estima-se que 215 milhões de cristãos enfrentam alto ou extremo nível de perseguição — 1 em cada 12 vive onde o cristianismo é proibido.
+
+      Por segurança, não divulgamos publicamente alguns países onde atuamos. Mesmo sob risco, nossos missionários seguem firmes, com apoio integral e proteção de Deus.
+
+      As ações incluem plantação de igrejas, assistência médica, projetos sociais, esportivos e educacionais. Missionários como Lucas Mota relatam perseguições frequentes, desde exclusão até prisões.</p>
+      <p>Ore pela igreja perseguida. Clame por salvação, libertação e por mais obreiros dispostos a levar a luz de Cristo aos povos em trevas.</p>
+    `,
+
+
+  "Oriente Médio": `
+    <p><strong>Atenção:</strong> O Oriente Médio é uma das regiões mais restritas à pregação do evangelho. A atuação missionária precisa ser cuidadosa, pois há riscos de prisão, perseguição e até morte.</p>
+    <p>Ore por estratégias criativas e por corações abertos à mensagem de Cristo.</p>
+  `
+};
+function addDangerMarker(continent, lat, lng, missionarios) {
+  const marker = L.marker([lat, lng], {
+    icon: L.divIcon({
+      className: '',
+      iconSize: [40, 40],
+      iconAnchor: [20, 20],
+      html: ` 
+        <div class="danger-icon-wrapper">
+          <i class="fas fa-exclamation-triangle danger-icon-outline"></i>
+          <i class="fas fa-exclamation-triangle danger-icon-fill"></i>
+        </div>
+      `
+    })
+  }).addTo(map);
+
+  const popupContent = `
+  <h3 style="margin-top: 0; font-size: 16px; font-weight: bold;">Área de Risco - ${continent}</h3>
+  <button class="accordion">Informações</button>
+  <div class="panel">
+    ${riscoInformacoes[continent] || "<p>Sem informações disponíveis.</p>"}
+  </div>
+  <button class="accordion">Missionários</button>
+  <div class="panel"><ul>${missionarios.map(m => `<li>${m}</li>`).join("")}</ul></div>
+`;
+
+  const popup = L.popup().setContent(popupContent);
+  marker.bindPopup(popup);
+
+  marker.on("popupopen", function () {
+  setTimeout(() => {
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+  }, 100); 
+});
+}
+
 for (const country in coords) {
-  const [lat, lng] = coords[country];
-  addBlinkingMarker(country, lat, lng);
+  if (data[country]) {
+    const [lat, lng] = coords[country];
+    addBlinkingMarker(country, lat, lng);
+  }
+}
+
+
+for (const continente in riscoCoords) {
+  const [lat, lng] = riscoCoords[continente];
+  addDangerMarker(continente, lat, lng, riscoContinentes[continente]);
 }
 </script>
 </body>
