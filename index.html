@@ -177,267 +177,584 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-const data = {
-    "África do Sul": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Angola": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Benin": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Botsuana": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Burkina Faso": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Cabo Verde": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Guiné": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Guiné-Bissau": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Moçambique": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Togo": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Espanha": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "França": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Itália": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Letônia": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Polônia": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Portugal": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Suíça": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Ucrânia": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Filipinas": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Nepal": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Timor Leste": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-  "Papua Nova Guiné": {
-    informacoes: [],
-    missionarios: ["Jorge Luis Siqueira Do Nascimento"],
-    projetos: []
-  },
-   "El Salvador": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-},
-"Guatemala": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-},
-"Honduras": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-},
-"México": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-},
-"Nicarágua": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-},
-"Panamá": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-},
-"Paraguai": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-},
-"República Dominicana": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-},
-"Uruguai": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-},
-"Venezuela": {
-  missionarios: [],
-  projetos: [],
-  informacoes: []
-
-},
-
-  "Itália": { missionarios: [
-         "Andre Aguiar Lisboa", 
-         "Fabiano Nicodemo", 
-         "Fabio Pegas Pisa",
-         "João Caio Gutterres Bottega", 
-         "Luiz Cláudio Marteletto",
-         "Manoel Florencio Filho"
-        ], 
-    projetos: []
-},
-  "Angola": { missionarios: [
-         "Francisco Cassinda Epamba", 
-         "Rosângela Ferro Dias Teck de Gamba"
+const data = { "África do Sul":{
+            informacoes: [
+             `<img src="https://missoesmundiais.com.br/images/WhatsApp_Image_20210608_at_093158.jpeg" alt="Africa do Sul" style="width:100%;margin-top:10px;">
+             <p>A África do Sul está localizada no extremo sul do continente africano, entre os oceanos Atlântico e Índico, com cerca de 50 milhões de habitantes, sendo 79,2% negros africanos.</p>
+             <p>Segundo o censo de 2001, 79,7% da população se identifica como cristã, sendo que muitos praticam uma fé sincrética que mistura crenças cristãs e indígenas.</p>
+             <p>O país tem um passado marcado pelo <strong>apartheid</strong>, regime de segregação racial que durou 42 anos e terminou com a eleição de <strong>Nelson Mandela</strong> em 1994, após 27 anos de prisão.</p>
+             <p>Com uma diversidade étnica significativa, a África do Sul apresenta grande riqueza cultural e religiosa.</p>
+           `],
+       missionarios: [
+         "Sem informações no momento"
         ],
-    projetos: [
-      "Congregação Batista do Calvário", 
-      "Escola Pamosi",
-      "PEPE", 
-      "Preparação de Professores para Escolas Teológicas"
-    ] 
-},
-  "Guiné-Bissau": { missionarios: [
-         "Adriana Justino do Nascimento",
-         "Adulai Balde", 
-         "Freddy Monteiro Ovando",
-         "José Roberto Dos Santos", 
-         "William Ricardo Viel"
-        ],
-    projetos: [
-      "Edificar",
-      "Empoderamento Linguístico",
-      "PEPE",
-      "Semeando Vida"
-    ] 
-},
-  "Romênia": { missionarios: [
-         "Gerson Tomaz Pereira"
-        ],
-    projetos: [
-
+    projetos: [ 
+     "PEPE"
     ]
 },
-  "Letônia": { missionarios: [
-         "Hans Gilson Behrsin",
-          "Peteris Elisan"
-        ], 
-    projetos: [
-
-    ] 
+   "Benin":{
+            informacoes: [
+             `<img src="https://missoesmundiais.com.br/images/headers/continentes/africa/benin-foto.jpg" alt="Benin" style="width:100%;margin-top:10px;">
+             <p><strong>Benim</strong> é um pequeno país da África Ocidental com cerca de 9 milhões de habitantes. Cerca de 49% da população tem menos de 15 anos, refletindo uma sociedade jovem e com famílias numerosas — em média 5,7 crianças por família.</p>
+             <p>Aproximadamente 1/3 da população vive abaixo da linha da pobreza. A <strong>agricultura</strong> é a principal atividade econômica e sustenta 56% dos habitantes.</p>
+             <p>O país apresenta um <strong>IDH muito baixo</strong> (0.437), ocupando a 163ª posição entre 177 países. Além disso, mais da metade das moradias são consideradas precárias.</p>
+             <p><strong>Missões Mundiais</strong> atua em Benim com foco na <strong>plantação de igrejas</strong> e no <strong>treinamento de novos líderes</strong>, buscando o crescimento da obra missionária no país.</p>`
+            ],
+       missionarios: [
+         "Sem informações no momento"
+        ],
+   projetos: [
+     "PEPE"
+    ]
 },
-  "Quênia": { missionarios: [
-         "Jacqueline Matos Dos Santos Thupula"
-        ], 
-    projetos: [
+   "Botsuana": {
+            informacoes: [
+             `<img src="https://missoesmundiais.com.br/images/noticias/2019/04/blessed_hands_principal.png" alt=Botsuana style="width:100%;margin-top:10px;">
+             <p><strong>Botsuana</strong> é um país de maioria cristã (70%), embora grande parte dos cristãos sejam independentes ou não afiliados a igrejas. Apenas 10,7% são protestantes e 4,6% pertencem a outras denominações. Além disso, 28,5% da população segue crenças tradicionais, com forte culto aos ancestrais.</p>
+             <p>A <strong>expectativa de vida</strong> é uma das piores do mundo (68 anos), e o país está entre os mais afetados pelo <strong>HIV/Aids</strong>.</p>
+             <p>Botsuana tornou-se independente em 1966. Em 2005, enfrentou uma grave crise social com a dizimação dos <strong>bosquímanos (bushmen)</strong>, atribuída ao governo, que teria como objetivo explorar jazidas de diamantes no deserto de Kalahari.</p>
+             <p><strong>Missões Mundiais</strong> atua no país desde 1993, contribuindo com ações evangelísticas e sociais.</p>
+            `],
+       missionarios: [
+         "Roberto Carlos Carmona"
+        ],
+   projetos: [
+     "Blessed Hands",
+     "Centro Acadêmico Esperança", 
+     "Seminário Batista da Convenção" 
+    ]
+},
+   "Burkina Faso": {
+            informacoes: [
+             `<img src="https://missoesmundiais.com.br/images/headers/continentes/africa/burkina-foto.jpg" alt=Burkina Faso style="width:100%;margin-top:10px;">
+             <p><strong>Burkina Faso</strong> está localizado na região do Sahel, uma faixa semiárida ao norte da África subsaariana, com cerca de 17,4 milhões de habitantes.</p>
+             <p>A religião dominante é o <strong>islamismo</strong> (54%), seguida do cristianismo (23,3%) e crenças tradicionais (22,1%). O <strong>ocultismo</strong> tem forte presença entre os povos, até mesmo dentro das igrejas, o que dificulta a propagação da verdadeira mensagem do evangelho.</p>
+             <p><strong>Missões Mundiais</strong> está presente no país desde 2008 e também envia jovens pelo <strong>projeto Radical África</strong>.</p>
+             <p>A <strong>pobreza extrema</strong>, a <strong>propagação do HIV/Aids</strong> e o <strong>acesso limitado à saúde</strong> (apenas 0,05 médicos por mil habitantes) são grandes desafios. Burkina está entre os 10 países com menor <strong>IDH</strong> do mundo.</p>
+             <p>Cerca de 70% da população depende da <strong>agricultura de subsistência</strong>, mas as <strong>secas prolongadas</strong> forçam o país a importar a maioria dos alimentos. Há ainda <strong>24 etnias não alcançadas</strong> pelo evangelho.</p>
+            `],
+        missionarios: [
+         "Sem informações no momento"
+        ],
+   projetos: [
+     "Luz para o Povo Marká",
+    ]
+},
+   "Cabo Verde": {
+            informacoes: [
+             `<img src="https://i.ytimg.com/vi/hJ5ZL_uzvZw/maxresdefault.jpg" alt=Cabo Verde style="width:100%;margin-top:10px;">
+             <p><strong>Cabo Verde</strong> é um arquipélago formado por 10 ilhas no Oceano Atlântico, localizado a cerca de 500 km da costa do Senegal. A maior ilha, <strong>São Tiago</strong>, abriga aproximadamente 50% da população.</p>
+             <p>Com cerca de 500 mil habitantes, 65% vivem em áreas urbanas. A população é composta majoritariamente por <strong>crioulos</strong> (71%), seguidos por grupos étnicos autóctones (28%) e uma pequena parcela de origem europeia (1%).</p>
+             <p>O <strong>português</strong> é a língua oficial, mas o <strong>crioulo</strong> é o idioma mais falado no dia a dia.</p>
+             <p>As ilhas eram desabitadas até 1462, quando foram colonizadas por Portugal e passaram a servir como ponto estratégico nas rotas para a América.</p>
+             <p><strong>Missões Mundiais</strong> chegou ao país em 1996, e sua presença tem sido essencial para o avanço do evangelho em meio à diversidade religiosa local. Foi em Cabo Verde que se iniciou o <strong>projeto Radical Luso-Africano</strong>, impactando vidas por meio da evangelização, discipulado e formação de líderes.</p>
+             <p>Apesar de ser considerado um país cristão, há uma forte presença de <strong>sincretismo religioso</strong>. A atuação de Missões Mundiais tem sido fundamental para levar clareza bíblica, esperança e transformação espiritual ao povo cabo-verdiano.</p>
+            `],
+        missionarios: [
+         "Emanuel Tavares Lopes Monteiro"
+        ],
+   projetos: [
+     "Amar",
+     "PEPE",
+    ]
+},
+  "Guiné": {
+            informacoes: [`
+             <img src="https://vocacionados.jmm.org.br/voluntarios/imagem/744_CAPA_4FCD272DD414.png;jsessionid=RlbH2zJ4S8HngGILE23QR_SMPdqbJ-E4JcI9xFsW.choochoo" alt=Guiné Cronacri style="width:100%;margin-top:10px;">
+             <p><strong>Guiné</strong> é um país da África Ocidental, onde cerca de 80% da população professa o <strong>islamismo</strong>. Também são muito presentes o <strong>animismo</strong> e as crenças tradicionais locais.</p>
+             <p>Apesar de ser a <strong>maior produtora mundial de bauxita</strong>, a riqueza mineral não tem sido usada de forma eficaz para reduzir a <strong>desigualdade social</strong>, fazendo da Guiné um dos países mais pobres do mundo.</p>
+             <p>Com cerca de 12 milhões de habitantes e capital em <strong>Conacri</strong>, a Guiné tem o <strong>francês</strong> como língua oficial, embora idiomas locais como o <strong>sussu</strong> sejam amplamente utilizados.</p>
+             <p>A <strong>agricultura</strong> emprega mais de 80% da mão-de-obra do país, sendo uma das atividades econômicas mais relevantes.</p>
+             <p><strong>Missões Mundiais</strong> atua na Guiné levando <strong>esperança, formação espiritual e transformação social</strong> a comunidades carentes. Através da <strong>plantação de igrejas</strong>, projetos educacionais e iniciativas sociais, missionários têm impactado vidas e levado o amor de Cristo em meio a desafios espirituais e econômicos profundos.</p>
+            `],
+       missionarios: [
+         "Vitor Rossetti"
+        ],
+   projetos: [
+     "Esperança",
+     "Estrela Brilhante",
+     "Formação Teológica Básica",
+     "Plantação de Igreja",
+     "Semeando Vida",
+     "PEPE"
+    ]
+},
+        "Togo": {
+     informacoes: [`<img src="https://missoesmundiais.com.br/images/noticias/2022/07/Africa-Ocidental_thumb.jpg" alt=Togo style="width:100%;margin-top:10px;">
+       <p><strong>Togo</strong> é um pequeno país localizado na costa ocidental da África, com cerca de 56.785 km² e população estimada em quase 7 milhões de habitantes, dividida em mais de 20  grupos étnicos distintos.</p>
+       <p>O idioma oficial é o <strong>francês</strong>, mas muitas pessoas, especialmente no norte do país, falam apenas línguas locais. A região também apresenta forte influência do <strong>islamismo</strong>, o que representa um desafio para a evangelização.</p>
+       <p>Embora o Togo seja relativamente estável em comparação com outros países da região, <strong>protestos em 2017</strong> evidenciaram tensões sociais ainda presentes.</p>
+       <p><strong>Missões Mundiais</strong> iniciou sua atuação no país em <strong>2015</strong>, com o propósito de levar o evangelho e contribuir para o <strong>desenvolvimento espiritual e humano</strong> da população togolesa. O trabalho missionário tem sido essencial para alcançar grupos étnicos diversos, promover discipulado e firmar a presença cristã em regiões de difícil acesso.</p>
+      `],
+    missionarios: [
+     "Sem informações no momento"
+    ],
+  projetos: [
+    "Blessed Hands",
+    "Centro Acadêmico Esperança",
+    "Seminário Batista Convenção"
+  ]
+},
+       "Espanha": {
+     informacoes: [
+       `<img src="https://missoesmundiais.com.br/images/headers/continentes/europa/espanha-foto.jpg" alt=Espanha Cronacri style="width:100%;margin-top:10px;">
+       <p><strong>Espanha</strong> foi por muito tempo um dos bastiões do    <strong>catolicismo oficial</strong> na Europa. Somente no final do século 20  o país começou a se abrir para outras denominações cristãs.</p>
+       <p>Apesar dessa abertura, o <strong>número de não crentes</strong> tem crescido rapidamente, tornando a Espanha um campo missionário desafiador e estratégico. <strong>Centenas de missionários</strong> já foram enviados ao país por diferentes agências.</p>
+       <p>As <strong>igrejas espanholas carecem de visão missionária e evangelística</strong>, especialmente em áreas com grande concentração de <strong>imigrantes do Norte da África</strong> e nos enclaves de <strong>Ceuta e Melilla</strong>, onde há predominância muçulmana.</p>
+       <p><strong>Missões Mundiais</strong> tem um papel fundamental na <strong>evangelização e no fortalecimento das igrejas locais</strong>, trabalhando para alcançar os espanhóis e os muitos imigrantes que vivem no país com o amor de Cristo.</p>
+     `],
+   missionarios: [ 
+     "Adoniram Judson Pires", 
+     "Armando de Oliveira Neto", 
+     "David Bianchi Ojeda", 
+     "Paulo Cesar Pagaciov"
+    ],
+  projetos: [ 
+   "Vida & Música",
+  ]
+},
+  "França": {
+       informacoes: [`<img src="https://missoesmundiais.com.br/images/headers/     continentes/europa/franca-foto.jpg" alt=França style="width:100%;margin-top:10px;">
+         <p><strong>França</strong> vive em constante alerta por conta de <strong>ameaças terroristas</strong>. A <strong>secularização rápida</strong> diminuiu significativamente a influência das igrejas, tornando a evangelização um grande desafio.</p>
+         <p>Mais de <strong>10% da população é muçulmana</strong>, vinda em grande parte de ex-colônias africanas. Além disso, há um crescimento do <strong>esoterismo</strong> e uma geração de <strong>jovens secularizados e sem esperança</strong>.</p>
+         <p>As <strong>igrejas evangélicas são pequenas</strong>, enfrentam divisões internas e <strong>não possuem visão de contribuição financeira</strong>, dificultando o sustento de obreiros e o avanço do evangelho.</p>
+         <p><strong>Missões Mundiais</strong> tem atuado de forma estratégica para <strong>fortalecer igrejas locais</strong>, apoiar líderes e alcançar tanto franceses quanto imigrantes com a <strong>mensagem transformadora de Cristo</strong>.</p>
+`],
+     missionarios: [
+     "Sem  informações no momento"
+    ],
+  projetos: [
+   "Sem informações no momento"
+  ]
+},
+  "Itália": {
+        informacoes: [`<img src="https://missoesmundiais.com.br/images/noticias/2020/09/batismopanditalia_principal.jpg" alt="Italia" style="width:100%;margin-top:10px;">
+         <p><strong>Itália</strong>, situada ao sul da Europa, é conhecida por sua história, gastronomia e pela forte influência do <strong>catolicismo</strong>, simbolizada pelo <strong>Vaticano</strong>, sede da Igreja Católica, localizada em Roma.</p>
+         <p><strong>Missões Mundiais</strong> atua no país desde <strong>1991</strong>, sendo a Itália um dos campos europeus com <strong>maior efetivo missionário</strong>. A missão tem sido fundamental no <strong>apoio a igrejas locais</strong>, discipulado e na <strong>acolhida de imigrantes</strong>.</p>
+         <p>A Itália enfrenta desafios sociais com a chegada constante de <strong>imigrantes em situação vulnerável</strong>, vindos principalmente do Norte da África. Em 2013, o naufrágio de uma embarcação superlotada, que matou 369 pessoas, revelou ao mundo a tragédia da imigração no Mar Mediterrâneo.</p>
+         <p>O trabalho missionário em solo italiano tem sido <strongessencial para oferecer esperança, cuidado e evangelização</strong> tanto para os italianos quanto para os estrangeiros que buscam refúgio no país.</p>`
+        ],
+      missionarios: [
+       "Andre Aguiar Lisboa", 
+       "Fabiano Nicodemo", 
+       "Fabio Pegas Pisa",
+       "João Caio Gutterres Bottega", 
+       "Luiz Cláudio Marteletto",
+       "Manoel Florencio Filho"
+      ],
+   projetos: [
+     "Sem informações no momento"
+    ]
+},
+  "Letônia": {
+      informacoes: [
+       `<img src="https://missoesmundiais.com.br/images/headers/continentes/europa/letonia-foto.jpg" alt="Letônia" style="width:100%;margin-top:10px;">
+       <p><strong>Letônia</strong>, localizada no norte da Europa, foi  após os Estados Unidos uma das nações que mais <strong>contribuíram para a evangelização no Brasil</strong>, especialmente a partir da década de 1920, com imigrantes que se estabeleceram em cidades do interior de São Paulo.</p>
+       <p>Hoje, o movimento se inverte: <strong>Missões Mundiais atua na Letônia</strong> com o objetivo de revitalizar a fé e fortalecer as igrejas locais. O principal desafio é o <strong>soerguimento da Igreja Batista Templo da Salvação</strong>, organizada em 1927 e, à época, uma das maiores do país.</p>
+       <p>Durante a ocupação soviética nos anos 1940, o templo foi confiscado e transformado em ginásio esportivo, sendo devolvido apenas em 1991. Desde então, as igrejas têm enfrentado dificuldades para crescer e se tornarem autossustentáveis.</p>
+       <p>A presença de Missões Mundiais tem sido fundamental para <strong>restaurar a chama missionária na Letônia</strong>, oferecendo apoio, discipulado e esperança ao povo letão.</p>
+      `],
+    missionarios: [
+     "Hans Gilson Behrsin",
+     "Peteris Elisan"
+    ],
+  projetos: [
+   "Sem informações no momento"
+  ]
+},
+  "Polônia": {
+      informacoes: [`
+       <img src="https://missoesmundiais.com.br/images/headers/continentes/europa/polonia-foto.jpg" alt="Polonia" style="width:100%;margin-top:10px;">
+       <p><strong>Polônia</strong> é um dos países com <strong>maior número de católicos nominais</strong> no mundo. Os <strong>centros religiosos</strong> sempre tiveram grande importância cultural e histórica, mas o <strong>materialismo e a religiosidade</strong> têm crescido, dificultando o entendimento sobre um <strong>relacionamento pessoal com Cristo</strong>.</p>
+       <p>Muitos poloneses vivem uma fé tradicional sem transformação, o que representa um grande desafio espiritual.</p>
+       <p>Além disso, a Polônia tem sido um importante destino para <strong>refugiados ucranianos</strong>, especialmente desde os conflitos na região. Isso amplia ainda mais o campo de atuação missionária no cuidado e acolhimento a essas pessoas.</p>
+       <p><strong>Missões Mundiais</strong> atua na Polônia com o objetivo de <strong>levar o evangelho vivo e relacional</strong> à população, ajudando os cristãos locais a se tornarem <strong>mais eficientes no testemunho</strong> e no discipulado, e também promovendo ações de <strong>apoio e compaixão aos refugiados</strong>.</p>
+       <p>Ore por uma ação poderosa do Espírito Santo entre os poloneses, para que sejam libertos da religiosidade e encontrem vida nova em Cristo.</p>
+     `],
+    missionarios: [
+     "Sem  informações no momento"
+    ],
+  projetos: [
+   "Plantação de Igreja na Cracóvia"
+  ]
+},
+  "Portugal": {
+        informacoes: [`
+         <img src="https://missoesmundiais.com.br/images/headers/continentes/europa/portugal-foto.jpg" alt="Portugal" style="width:100%;margin-top:10px;">
+         <p><strong>Portugal</strong>, historicamente marcado pela <strong>Contra Reforma</strong>, tem no <strong>catolicismo</strong> uma parte importante de sua identidade nacional. Embora tenha sido um dos primeiros campos missionários das igrejas evangélicas brasileiras, o evangelho não se expandiu no país como ocorreu no Brasil.</p>
+         <p>As <strong>igrejas evangélicas portuguesas são pequenas</strong> e muitas vezes sem visão missionária, o que limita o crescimento do evangelho. Há <strong>baixo compromisso</strong> com a causa de Cristo, pouca contribuição financeira, baixa frequência aos cultos e um <strong>paternalismo dependente de missões estrangeiras</strong>.</p>
+         <p>Apesar de o censo de 2011 apontar 3% de evangélicos, organizações afirmam que o número real é inferior a 1%. Além disso, há <strong>resistência a mudanças</strong> e desafios sociais entre os jovens, como o <strong>abuso de drogas</strong>.</p>
+         <p><strong>Missões Mundiais</strong> tem atuado de forma estratégica em Portugal, promovendo <strong>renovação espiritual, capacitação de líderes</strong> e incentivando uma <strong>igreja mais relevante e comprometida</strong> com a evangelização em solo europeu.</p>
 
-    ] 
+        `],
+      missionarios: [ 
+       "Alcir Almeida De Souza",
+       "Cesar Augusto Corsete", 
+       "Claudio Elivan Santos da Silva", 
+       "Debora Anahi Vazquez Zarate", 
+       "Jose Calixto Patricio"
+      ],
+    projetos: [
+    "Sem  informações no momento"  
+    ]
+},
+  "Suíça": {
+      informacoes: [`
+       <img src="https://missoesmundiais.com.br/images/noticias/2019/04/suica_texto_2.jpg" alt="Suiça" style="width:100%;margin-top:10px;">
+       <p><strong>Suíça</strong> é um dos países com os <strong>maiores índices de suicídio do mundo</strong>, apesar de apresentar excelentes condições sociais. Teve papel relevante na <strong>Reforma Protestante</strong> e ainda usufrui de sua herança cristã, embora o <strong>esfriamento espiritual</strong> e o <strong>liberalismo teológico</strong> tenham enfraquecido muitas igrejas locais.</p>
+       <p>O país enfrenta também desafios sociais, como a <strong>xenofobia</strong>, especialmente diante do crescente número de imigrantes nas últimas décadas.</p>
+       <p>Há sinais positivos de uma <strong>retomada do crescimento espiritual</strong>, com conversões acontecendo e novas iniciativas sendo implantadas.</p>
+       <p><strong>Missões Mundiais</strong> atua na Suíça com a missão de <strong>revigorar o evangelismo, formar líderes comprometidos</strong> e desenvolver estratégias para <strong>alcançar jovens e imigrantes</strong> com a mensagem do evangelho, contribuindo para um novo tempo de avivamento no país.</p>
+
+      `],
+    missionarios: [
+     "Sem  informações no momento"
+    ],
+  projetos: [
+   "Sem informações no momento"
+  ]
+},
+  "Ucrânia": {
+     informacoes: [`
+       <img src="https://www.missoesmundiais.com.br/images/noticias/2022/03/WhatsApp-Image-2022-03-06-at-14.35.51.jpeg" alt="Ucrania" style="width:100%;margin-top:10px;">
+       <p><strong>Ucrânia</strong>, segunda maior nação em extensão territorial da Europa, enfrenta uma grave crise desde o final de 2013, agravada pela <strong>anexação da Crimeia pela Rússia</strong> em 2014. O país mergulhou em um <strong>conflito armado</strong> entre rebeldes pró-Rússia e forças do governo, afetando profundamente a população.</p>
+       <p>Desde então, <strong>várias igrejas foram queimadas</strong> e cristãos têm sofrido perseguição. Muitos foram obrigados a se <strong>deslocar para outras regiões</strong>, onde encontram pessoas sedentas por Deus. Assim como na igreja primitiva, Deus tem usado a <strong>perseguição e a dispersão</strong> para espalhar o evangelho.</p>
+       <p><strong>Missões Mundiais</strong> permanece ao lado do povo ucraniano, com missionários firmes em seu propósito de <strong>anunciar a Palavra</strong> em meio ao caos, levando consolo, esperança e salvação em tempos de guerra e sofrimento.</p>
+     `],
+    missionarios: [
+     "Anatoliy Shmilikhovskyy",
+     "Lyubomyr Matveiev"
+    ],
+  projetos: [
+   "Departamento de Missões Estrangeiras em Lviv",
+   "Geração"
+  ]
+},
+  "Filipinas": {
+     informacoes: [
+       `<img src="https://missoesmundiais.com.br/images/headers/continentes/asia/filipinas-foto.jpg" alt="Filipinas" style="width:100%;margin-top:10px;">
+       <p>As <strong>Filipinas</strong>, localizadas no Sudeste Asiático, são formadas por mais de <strong>7 mil ilhas</strong> e constituem a <strong>única nação de maioria católica da Ásia</strong>, resultado da colonização espanhola. O nome foi dado em homenagem ao rei Filipe II, no século 16.</p>
+       <p>Após a Segunda Guerra Mundial, os <strong>Estados Unidos estabeleceram bases militares</strong> no país. Em 1972, teve início a <strong>ditadura de Ferdinand Marcos</strong>, marcada por repressão e corrupção, que terminou após o assassinato de um líder opositor.</p>
+       <p>Atualmente, o país enfrenta desafios como o <strong>separatismo islâmico na região de Mindanao</strong>, ao sul, onde há forte presença muçulmana e instabilidade social.</p>
+       <p><strong>Missões Mundiais</strong> atua nas Filipinas promovendo <strong>ações evangelísticas e sociais</strong>, levando esperança às comunidades afetadas por conflitos e fortalecendo a igreja local em sua missão de alcançar todo o arquipélago com o evangelho.</p>
+     `],
+    missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "Sem informações no momento"
+  ],
+},
+  "Nepal": {
+      informacoes: [
+       `<img src="https://missoesmundiais.com.br/images/headers/nepal-784741_1920.jpg" alt="Nepal" style="width:100%;margin-top:10px;">
+       <p><strong>Nepal</strong>, antes um <strong>reino hindu fechado a estrangeiros</strong>, passou por profundas transformações no século 20, tornando-se uma <strong>república secular</strong> em 2008 após uma guerra civil e o fim da monarquia.</p>
+       <p>O crescimento da <strong>igreja cristã no Nepal</strong> tem sido impressionante. De zero registros em 1951, o número de cristãos chegou a <strong>375 mil em 2011</strong>, com expectativa de crescimento contínuo.</p>
+       <p>O <strong>sistema de castas</strong>, que discrimina pessoas de castas inferiores, tem levado muitos a encontrarem no <strong>cristianismo uma alternativa de dignidade e esperança</strong>.</p>
+       <p>Apesar do <strong>proselitismo ser proibido</strong>, a lei raramente é aplicada. Em meio a isso, <strong>Missões Mundiais</strong> tem atuado com <strong>ações de assistência social</strong>, preenchendo lacunas deixadas pelo Estado e, assim, <strong>anunciando o evangelho de forma prática e transformadora</strong>.</p>
+       <p><strong>Missões Mundiais tem sido essencial</strong> para o avanço da obra de Cristo no Nepal, levando amor, cuidado e a mensagem de salvação a um povo marcado pela superação e fome espiritual.</p>
+
+      `],
+    missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "Sem informações no momento"
+  ],
+},
+  "Timor Leste": {
+      informacoes: [`
+       <img src="https://missoesmundiais.com.br/images/headers/continentes/asia/timor-leste-foto.jpg" alt="Timor Leste" style="width:100%;margin-top:10px;">
+       <p><strong>Timor-Leste</strong> tem cerca de 1,2 milhão de habitantes. A maioria segue o <strong>catolicismo</strong>, herança da colonização portuguesa, mas <strong>religiões tradicionais como o animismo</strong> ainda são fortemente presentes.</p>
+       <p>Foi o <strong>último país de língua portuguesa a conquistar independência</strong>, em 2002. Está entre as <strong>nações mais pobres do mundo</strong> e depende de ajuda externa.</p>
+       <p><strong>Missões Mundiais</strong> atua levando o <strong>evangelho e ações de cuidado</strong> ao povo timorense, contribuindo para a <strong>transformação espiritual e social</strong> do país.</p>
+      `],
+    missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "PEPE"
+  ],
+},
+  "Papua Nova Guiné": {
+     informacoes: [
+       `
+       <img src="https://guiame.com.br/_next/image?url=https%3A%2F%2Fthumbor.guiame.com.br%2Funsafe%2F840x500%2Fhttp%3A%2F%2Fmedia.guiame.com.br%2Farchives%2F2016%2F03%2F05%2F3165985232-papua-nova-guine.jpg&w=1920&q=75" alt="Papua" style="width:100%;margin-top:10px;">
+       <p><strong>Papua-Nova Guiné</strong> é o primeiro campo de atuação de <strong>Missões Mundiais na Oceania</strong>, um país com <strong>grande diversidade cultural e religiosa</strong>, onde se falam mais de <strong>848 línguas diferentes</strong>.</p>
+       <p>Com cerca de <strong>7 milhões de habitantes</strong> e um <strong>IDH considerado baixo</strong>, o país enfrenta desafios significativos, especialmente nas áreas de <strong>educação e acesso à Bíblia</strong>.</p>
+       <p><strong>Missões Mundiais</strong> desenvolve o <strong>projeto Tapotan</strong>, que leva a Palavra de Deus à população por meio da <strong>tradução bíblica</strong>, produção de <strong>materiais em áudio, vídeo e escrita</strong>, além de <strong>formar professores</strong> para atuarem dentro de suas próprias etnias.</p>
+       <p>O trabalho missionário é essencial para a <strong>evangelização, alfabetização e transformação espiritual</strong> do povo da Papua-Nova Guiné.</p>
+       `],
+    missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "Bíblias para os Povos"
+  ],
+},
+   "El Salvador": {
+     informacoes: [`
+     <p><strong>El Salvador</strong> é a menor nação da parte continental da América Central, com cerca de <strong>6,5 milhões de habitantes</strong> e o <strong>espanhol</strong> como língua oficial.</p>
+     <p>Sua <strong>história recente é marcada por dor e instabilidade</strong>: uma guerra civil nos anos 1980 deixou mais de 75 mil mortos e ainda impacta negativamente o desenvolvimento do país.</p>
+     <p>A <strong>pobreza afeta quase metade da população</strong>, e grande parte da economia depende das <strong>remessas de dinheiro</strong> enviadas por salvadorenhos que vivem no exterior.</p>
+     <p><strong>Missões Mundiais</strong> atua em El Salvador levando <strong>esperança, cuidado e a mensagem de Cristo</strong> por meio de ações missionárias que buscam restaurar vidas e comunidades marcadas por traumas e necessidades sociais profundas.</p>
+
+     `],
+    missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "PEPE"
+  ],
+},
+"Guatemala": {
+      informacoes: [
+      `<img src="https://missoesmundiais.com.br/images/headers/continentes/america/guatemala-foto.jpg" alt="Guatemala" style="width:100%;margin-top:10px;">
+       <p><strong>Guatemala</strong>, localizada na América Central, tem cerca de <strong>15 milhões de habitantes</strong>, sendo mais de 90% católicos. O país é marcado por <strong>grandes contrastes sociais</strong> e está sujeito a <strong>terremotos e atividade vulcânica</strong>, o que agrava ainda mais a pobreza de boa parte da população.</p>
+       <p>Há uma tensão histórica entre a <strong>população indígena</strong> e a <strong>elite de origem espanhola</strong>, que detém o poder político. Além disso, a sociedade enfrenta graves problemas como <strong>desnutrição infantil</strong>, <strong>violência doméstica</strong> e <strong>dependência química</strong>.</p>
+       <p><strong>Missões Mundiais</strong> atua na Guatemala desde <strong>2013</strong>, com destaque para a <strong>plantação de igrejas</strong> e a expansão do <strong>programa PEPE</strong>, que alcança crianças em situação de vulnerabilidade com educação, cuidado e a mensagem do evangelho.</p>
+       <p>O trabalho missionário tem sido essencial para levar <strong>esperança e transformação</strong> ao povo guatemalteco.</p>
+      `],
+  missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "PEPE"
+  ]
+},
+"Honduras": {
+     informacoes: [`
+       <img src="https://missoesmundiais.com.br/images/headers/continentes/america/honduras-foto.jpg" alt="Honduras" style="width:100%;margin-top:10px;">
+       <p><strong>Honduras</strong>, segundo maior país da América Central, possui uma área de 112.492 km² e uma população superior a <strong>8 milhões de habitantes</strong>, composta principalmente por <strong>mestiços de espanhóis e indígenas</strong>.</p>
+       <p>É uma das <strong>nações mais pobres das Américas</strong>, afetada por <strong>crises políticas</strong> e pela <strong>ação do narcotráfico</strong>. A população é majoritariamente <strong>católica (75%)</strong>, mas o país é <strong>aberto ao trabalho evangélico</strong>.</p>
+       <p><strong>Missões Mundiais</strong> chegou a Honduras em <strong>2017</strong>, com a inauguração da primeira unidade do <strong>PEPE</strong> (programa socioeducativo), levando <strong>educação infantil de qualidade</strong> e promovendo o desenvolvimento integral de crianças e famílias.</p>
+       <p>A missão contribui de forma significativa para transformar vidas, oferecendo esperança e oportunidades por meio do <strong>amor de Cristo e da educação</strong>.</p>
+      `],
+  missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "PEPE"
+  ]
+},
+"México": {
+      informacoes: [`
+       <img src="https://linharesjr.com.br/wp-content/uploads/2025/02/IMG-1200-x-628-px-2025-02-24T110720.072-1024x536.jpg" alt="Mexico" style="width:100%;margin-top:10px;">
+       <p><strong>México</strong> enfrenta uma grave crise de <strong>violência ligada ao narcotráfico</strong>, que domina diversas regiões do país. Em 2017, a guerra das drogas resultou em cerca de <strong>70 assassinatos por dia</strong>.</p>
+       <p>A <strong>igreja mexicana</strong> enfrenta o grande desafio de <strong>mostrar-se relevante</strong>, proclamando o <strong>evangelho integral</strong> e oferecendo uma alternativa de paz e esperança em Jesus.</p>
+       <p><strong>Missões Mundiais</strong> apoia o fortalecimento da igreja local, incentivando a ação evangelística e social, para que <strong>o amor de Cristo alcance os que vivem em meio ao medo e à violência</strong>.</p>
+      `],
+  missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "PEPE"
+  ]
+},
+"Nicarágua": {
+      informacoes: [`
+       <img src="https://missoesmundiais.com.br/images/noticias/2024/10/PEPE-Nic_txt-2.jpg" alt="Nicaragua" style="width:100%;margin-top:10px;">
+       <p><strong>Nicarágua</strong> tem uma população estimada em cerca de <strong>7 milhões de habitantes</strong>, com maioria <strong>multiétnica</strong>. Sua capital, <strong>Manágua</strong>, é a terceira maior cidade da América Central.</p>
+       <p>A religião predominante é o <strong>catolicismo (58,5%)</strong>, seguida por protestantes (24,1%) e um número crescente de <strong>não religiosos (15,7%)</strong>.</p>
+       <p>O país enfrenta sua <strong>maior crise política e social em décadas</strong>, com repressão a protestos e centenas de mortes desde 2018, durante o governo de <strong>Daniel Ortega</strong>.</p>
+       <p><strong>Missões Mundiais</strong> atua de forma essencial na Nicarágua, alcançando principalmente <strong>crianças em situação de vulnerabilidade</strong> por meio do <strong>programa PEPE</strong>, promovendo educação, apoio e o evangelho mesmo em meio à instabilidade.</p>
+       <p>O trabalho missionário tem sido <strong>fonte de esperança e transformação</strong> para famílias afetadas pela crise e pela pobreza.</p>
+      `],
+      missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "PEPE"
+  ]
+},
+"Panamá": {
+      informacoes: [`
+       <img src="https://comunhao.com.br/wp-content/uploads/2020/10/MarchaPanama.jpg" alt="panamá" style="width:100%;margin-top:10px;">
+       <p><strong>Panamá</strong> é uma nação estrategicamente localizada, dividida pelo <strong>Canal do Panamá</strong>, que conecta o oceano Atlântico ao Pacífico. Cerca de <strong>14 mil embarcações cruzam o canal a cada ano</strong>, tornando-o vital para o comércio internacional.</p>
+       <p>Com uma população de aproximadamente <strong>4 milhões de pessoas</strong>, o país é majoritariamente <strong>católico (70%)</strong>, mas enfrenta desafios como <strong>corrupção, presença de cartéis de drogas, desestruturação familiar e violência</strong>.</p>
+       <p>As igrejas locais ainda têm uma atuação tímida e não respondem plenamente às necessidades espirituais e sociais do povo panamenho.</p>
+       <p><strong>Missões Mundiais</strong> atua no país com o objetivo de <strong>despertar a igreja</strong> para um evangelismo relevante, promover ações que tragam <strong>transformação social</strong> e impactar vidas com o <strong>amor e a verdade do evangelho</strong>.</p>
+
+      `],
+  missionarios: [
+     "Carmen Ligia Ferreira de Andrade"
+    ],
+ projetos: [
+   "PEPE"
+  ]
+},
+"Paraguai": {
+      informacoes: [`
+       <img src="https://missoesmundiais.com.br/images/noticias/2024/09/VSF-Kids_principal.jpg" alt="Paraguai" style="width:100%;margin-top:10px;">
+       <p><strong>Paraguai</strong>, país vizinho ao Brasil, tem cerca de <strong>7 milhões de habitantes</strong>, sendo <strong>90% católicos</strong>. Faz fronteira com Argentina, Bolívia e Brasil, e é um país sem saída para o mar. Sua economia se destaca pela <strong>geração de energia hidrelétrica</strong>, com usinas como Itaipu no Rio Paraná.</p>
+       <p>O país sofre com a <strong>concentração fundiária</strong>, onde poucos detêm grande parte das terras, enquanto muitos vivem sem acesso à produção rural, gerando constantes tensões sociais.</p>
+       <p><strong>Missões Mundiais</strong> atua no Paraguai desde <strong>1964</strong> e é um dos campos de maior investimento na América do Sul. Além de desenvolver <strong>plantação e revitalização de igrejas</strong> em cidades como Assunção, Itauguá e Encarnación, o país também sedia a <strong>coordenação do PEPE</strong> na América Latina.</p>
+       <p>O trabalho missionário tem sido essencial para <strong>levar transformação espiritual e social</strong> ao povo paraguaio.</p>
+
+       `],
+  missionarios: [
+     "Ana Lucia Ferreira Goncalves",
+     "David Balmant do Espírito Santo",
+    ],
+ projetos: [
+   "PEPE"
+  ]
+},
+"República Dominicana": {
+      informacoes: [`
+      <img src="https://missoesmundiais.com.br/images/headers/continentes/america/republica-dominicana-foto.jpg" alt="Republica Dominicana" style="width:100%;margin-top:10px;">
+      <p><strong>República Dominicana</strong> está localizada no <strong>Caribe</strong>, na parte oriental da ilha de Hispaniola, e faz fronteira apenas com o <strong>Haiti</strong>. O país tem uma população de pouco mais de <strong>10 milhões de habitantes</strong>.</p>
+      <p>O <strong>turismo</strong> é uma das principais fontes de renda, mas a <strong>criminalidade, o desemprego e a inflação</strong> fazem com que muitos dominicanos emigrem — estima-se que <strong>1 milhão vivam nos Estados Unidos</strong>.</p>
+      <p><strong>Missões Mundiais</strong> está presente no país desde <strong>1991</strong> e atua por meio do <strong>PEPE</strong> (programa socioeducativo), que oferece a crianças de 4 a 6 anos uma <strong>educação integral baseada no amor de Jesus</strong>, promovendo transformação em suas vidas, famílias e comunidades.</p>
+      `],
+  missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "PEPE"
+  ]
+},
+"Uruguai": {
+     informacoes: [`
+       <img src="https://comunhao.com.br/wp-content/uploads/2018/09/voltun%C3%A1rios-sem-fronteiras-e1537808309782.jpg" alt="Uruguai" style="width:100%;margin-top:10px;">
+       <p><strong>Uruguai</strong> é o país mais <strong>secularizado da América</strong>, com mais de <strong>25% da população sem religião</strong>. A cada mês, em média, <strong>815 mulheres interrompem a gravidez</strong>, refletindo os desafios éticos e espirituais enfrentados pela sociedade uruguaia.</p>
+       <p>O país também lida com <strong>êxodo de jovens</strong> para o exterior, <strong>baixo crescimento populacional</strong> e um ritmo acelerado de <strong>envelhecimento</strong>.</p>
+       <p>Mesmo em meio a esse cenário, as <strong>igrejas evangélicas têm crescido</strong> nas últimas décadas.</p>
+       <p><strong>Missões Mundiais</strong> atua no Uruguai com o propósito de <strong>fortalecer a igreja local</strong>, desenvolver estratégias para <strong>alcançar os jovens</strong> e <strong>anunciar o evangelho</strong> em uma nação marcada pela descrença e individualismo.</p>
+
+      `],
+  missionarios: [
+     "Daniel Duarte de Oliveira"
+    ],
+ projetos: [
+   "Sem informações no momento"
+  ]
+},
+"Venezuela": {
+      informacoes: [`
+       <img src="https://missoesmundiais.com.br/images/noticias/2025/03/Crianas-Venezuela_txt-1.jpg" alt="Venezuela" style="width:100%;margin-top:10px;">
+       <p><strong>Venezuela</strong>, país da América do Sul com cerca de <strong>30 milhões de habitantes</strong>, enfrenta uma <strong>grave crise política e econômica</strong> desde 2014, intensificada após a eleição de <strong>Nicolás Maduro</strong>, herdeiro político de Hugo Chávez.</p>
+       <p>Apesar de possuir as <strong>maiores reservas de petróleo do mundo</strong>, o país sofre com uma <strong>recessão profunda</strong> e <strong>hiperinflação</strong> anual de cerca de 2.500%. Há escassez de alimentos e pessoas reviram o lixo em busca de comida, mesmo sendo trabalhadores formais.</p>
+       <p>Desde 2017, <strong>milhares de venezuelanos migraram para o Brasil</strong> em busca de esperança e dignidade, muitos cruzando o país a pé.</p>
+       <p><strong>Missões Mundiais</strong> retomou suas ações no país por meio do <strong>PEPE</strong> e também atua no Brasil com apoio aos refugiados. Em <strong>2018</strong>, ajudou a fundar a <strong>Casa Brasil-Venezuela</strong> em Roraima, oferecendo acolhimento e suporte. A missão tem sido <strong>instrumento de amor, acolhimento e transformação</strong> em meio ao sofrimento do povo venezuelano.</p>
+      `],
+  missionarios: [
+     "Sem informações no momento"
+    ],
+ projetos: [
+   "DNA Missionário",
+   "PEPE"
+  ]
+
+},
+  "Angola": { 
+      Informacoes: [`
+       <img src="https://www.missoesmundiais.com.br/images/noticias/2025/03/Pamosi_txt-2.jpg" alt="Angola" style="width:100%;margin-top:10px;">
+       <p><strong>Angola</strong> possui maioria <strong>cristã</strong>, embora marcada por <strong>sincretismo religioso</strong> e costumes herdados de religiões tradicionais. Entre os cristãos, 59% são católicos, 26% protestantes e 10,7% pertencem a outras denominações. Há também 4,3% de agnósticos e 2% entre ateus e outras crenças.</p>
+       <p>Um dos ícones de <strong>Missões Mundiais</strong>, a missionária <strong>Analzira Nascimento</strong>, serviu no país de 1985 a 2002, atuando durante os difíceis anos da guerra civil ao lado do povo angolano.</p>
+       <p>Entre os principais desafios de Angola hoje estão a <strong>mortalidade infantil</strong> e a <strong>instabilidade política</strong>, especialmente com grupos que lutam pela independência da província de Cabinda.</p>
+       <p>Em 2004, Missões Mundiais iniciou o <strong>Ministério com Surdos</strong> na cidade do Huambo, na <strong>Igreja Batista do Calvário</strong>, com apoio dos batistas brasileiros. Esse trabalho resultou na <strong>criação da Escola Pamosi</strong>, uma escola inclusiva, e na <strong>expansão do ministério para 13 igrejas em 4 províncias</strong>.</p>
+       <p>Entre os frutos está <strong>Francisco Cassinda Epamba</strong>, um dos primeiros surdos batizados. Ele se converteu, evangelizou outros surdos, estudou teologia e, em 2018, foi <strong>ordenado pastor</strong>. Hoje, atua como <strong>missionário da terra</strong> ao lado do Pr. Sabino Teck.</p>
+       <p><strong>Missões Mundiais tem sido essencial em Angola</strong>, promovendo transformação espiritual, inclusão e esperança em meio a uma realidade de desafios sociais e espirituais.</p>
+       `],
+    missionarios: [
+     "Francisco Cassinda Epamba", 
+     "Rosângela Ferro Dias Teck de Gamba"
+    ],
+  projetos: [
+   "Congregação Batista do Calvário", 
+   "Escola Pamosi",
+   "PEPE", 
+   "Preparação de Professores para Escolas Teológicas"
+  ] 
+},
+  "Guiné-Bissau": {
+      informacoes:[`
+       <img src="https://missoesmundiais.com.br/images/headers/continentes/africa/guinea-bissau-foto.jpg" alt="Guiné-Bissau" style="width:100%;margin-top:10px;">
+       <p><strong>Guiné-Bissau</strong>, localizada na <strong>costa ocidental da África</strong>, faz parte da Comunidade dos Países de Língua Portuguesa. Possui cerca de <strong>2 milhões de habitantes</strong> em uma área de 36.125 km².</p>
+       <p>A população é majoritariamente <strong>muçulmana (45,3%)</strong> e praticante de <strong>crenças tradicionais (41,2%)</strong>. Em 1998, após uma tentativa de golpe militar, o país mergulhou em uma <strong>guerra civil</strong>, forçando cerca de 200 mil pessoas a fugirem da capital, Bissau.</p>
+       <p>No país vivem também <strong>povos nômades</strong>, muitos muçulmanos, que falam <strong>árabe e dialetos locais</strong>. Vários desses grupos têm sido impactados positivamente pelo trabalho de <strong>Missões Mundiais</strong> na cidade de <strong>Bafatá</strong>.</p>
+       <p>Ali, a missão mantém <strong>clínica médica, odontológica, escola</strong> e outros serviços que demonstram o <strong>amor de Cristo de forma prática</strong>, alcançando vidas em meio à diversidade e aos desafios espirituais e sociais.</p>
+      `],
+    missionarios: [
+     "Adriana Justino do Nascimento",
+     "Adulai Balde", 
+     "Freddy Monteiro Ovando",
+     "José Roberto Dos Santos", 
+     "William Ricardo Viel"
+    ],
+  projetos: [
+   "Edificar",
+   "Empoderamento Linguístico",
+   "PEPE",
+   "Semeando Vida"
+  ] 
+},
+  "Romênia": { 
+     informacoes:[`
+       <img src="https://media-manager.noticiasaominuto.com/960/naom_621ff560a0707.webp?crop_params=dW5kZWZpbmVk" alt="Romenia" style="width:100%;margin-top:10px;">
+       <p><strong>Romênia</strong>, localizada no <strong>leste da Europa</strong>, possui uma forte tradição ligada à <strong>Igreja Ortodoxa</strong>, mas enfrenta atualmente um cenário de <strong>esfriamento espiritual</strong> e crescente <strong>secularização</strong>, principalmente entre os jovens.</p>
+       <p>A <strong>descrença, o materialismo</strong> e a <strong>falta de engajamento das novas gerações</strong> com a fé cristã têm se tornado grandes desafios para o avanço do evangelho no país.</p>
+       <p>Embora o portal oficial de <strong>Missões Mundiais</strong> não apresente informações detalhadas sobre a Romênia, <strong>há missionários atuando no país</strong>, comprometidos com a <strong>plantação e revitalização de igrejas</strong>, o <strong>discipulado</strong> e o <strong>apoio a comunidades em vulnerabilidade</strong>.</p>
+       <p>O trabalho missionário tem sido fundamental para <strong>levar esperança, restaurar vidas e reacender a fé</strong> no coração do povo romeno.</p>
+     `],
+    missionarios: [
+     "Gerson Tomaz Pereira"
+    ],
+  projetos: [
+   "Sem informações no momento"
+  ]
+},
+  "Quênia": {
+     informacoes:[`
+       <img src="https://sitepa.s3.amazonaws.com/fotos/MDEyUmtGVFZFTk5Vdz09TWpBME9BPT0%3D/1701371659_1701371658-cristaos%20no%20quenia%20recebendo%20biblias.webp" alt="Quenia" style="width:100%;margin-top:10px;">
+       <p><strong>Quênia</strong>, localizado na <strong>África Oriental</strong>, é uma das nações mais influentes da região, com cerca de <strong>55 milhões de habitantes</strong>. Embora a maioria da população se identifique como cristã, o país enfrenta <strong>desafios sociais, econômicos e religiosos</strong>, especialmente em regiões de maioria muçulmana.</p>
+       <p>A <strong>pobreza, desigualdade social</strong> e <strong>conflitos étnicos e religiosos</strong> ainda marcam partes do território queniano.</p>
+       <p>Embora o portal oficial de <strong>Missões Mundiais</strong> não apresente atualmente informações detalhadas sobre o trabalho no Quênia, <strong>há missionários atuando no país</strong>, comprometidos com a <strong>plantação de igrejas, formação de líderes</strong> e <strong>projetos sociais</strong> que demonstram o amor de Cristo em meio aos desafios locais.</p>
+       <p>Mesmo de forma discreta, o trabalho missionário tem promovido <strong>transformação espiritual e impacto social</strong> entre os povos do Quênia.</p>
+
+      `],
+    missionarios: [
+     "Jacqueline Matos Dos Santos Thupula"
+    ], 
+  projetos: [
+   "Sem informações no momento"
+  ] 
 },
   "Argentina": { 
-    informacoes:[`
-  <img src="data:image/jpeg;base64,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" alt="argentina" style="width:100%;margin-top:10px;">
-  <p>A Argentina enfrenta uma <strong>grave crise econômica</strong>, que tem provocado aumento da <strong>pobreza</strong>, <strong>inflação</strong> descontrolada e <strong>desemprego</strong> crescente. Muitos cidadãos têm dificuldades para suprir suas necessidades básicas.</p>
-  <p>Essa instabilidade impacta diretamente nas famílias, com <strong>aumento da violência doméstica</strong>, <strong>abandono de crianças</strong> e casos de <strong>depressão</strong> e <strong>suicídio</strong>.</p>
-  <p>Apesar dos desafios, há sinais de esperança: <strong>igrejas evangélicas estão crescendo</strong>, especialmente nas áreas periféricas. Muitas delas têm desenvolvido trabalhos sociais relevantes, como <strong>acolhimento de crianças vulneráveis</strong> e <strong>distribuição de alimentos</strong>.</p>
-  <p>A necessidade de <strong>apoio emocional e espiritual</strong> é grande. Missionários têm atuado em regiões carentes, levando conforto, assistência e formação cristã.</p>
-`
-
+      informacoes:[`
+       <img src="https://missoesmundiais.com.br/images/noticias/2019/05/argentina_BN.jpg" alt="Argentina" style="width:100%;margin-top:10px;">
+       <p>A Argentina enfrenta uma <strong>grave crise econômica</strong>, que tem provocado aumento da <strong>pobreza</strong>, <strong>inflação</strong> descontrolada e <strong>desemprego</strong> crescente. Muitos cidadãos têm dificuldades para suprir suas necessidades básicas.</p>
+       <p>Essa instabilidade impacta diretamente nas famílias, com <strong>aumento da violência doméstica</strong>, <strong>abandono de crianças</strong> e casos de <strong>depressão</strong> e <strong>suicídio</strong>.</p>
+       <p>Apesar dos desafios, há sinais de esperança: <strong>igrejas evangélicas estão crescendo</strong>, especialmente nas áreas periféricas. Muitas delas têm desenvolvido trabalhos sociais relevantes, como <strong>acolhimento de crianças vulneráveis</strong> e <strong>distribuição de alimentos</strong>.</p>
+       <p>A necessidade de <strong>apoio emocional e espiritual</strong> é grande. Missionários têm atuado em regiões carentes, levando conforto, assistência e formação cristã.</p>
+      `],
+    missionarios: [
+     "João Luiz Dutra"
     ],
+  projetos: [ 
+   "PEPE",
+  ] 
+},
+  "Japão": { 
+      informaçoes:[`
+       <img src="https://scontent.fsdu11-1.fna.fbcdn.net/v/t39.30808-6/462748226_9259100807450742_4090126853877857943_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=JsLJLu6OrH8Q7kNvwGfiMpy&_nc_oc=AdlCiGtY3TFXtxCeOiqa_v0bt-Zh-1QtsXgB-KnTM1i2nCONkuAxou3ZmhSblo1S2-OPdBgWC_SBwRS1EqO4JmvG&_nc_zt=23&_nc_ht=scontent.fsdu11-1.fna&_nc_gid=cMk-Fj79vMJRyQo2rYqrZg&oh=00_AfHbar0zJwWmoS6QeycZ86_wKPKVEX7XBjVPqHrHd7AwCA&oe=6804637A" alt="Japão" style="width:100%;margin-top:10px;">
+       <p><strong>Japão</strong>, localizado no <strong>leste asiático</strong>, é uma das nações mais desenvolvidas do mundo, com alto padrão de vida, tecnologia avançada e forte senso de disciplina e tradição. No entanto, o país é também um dos mais <strong>fechados ao evangelho</strong>, com menos de 1% da população cristã.</p>
+       <p>A <strong>pressão cultural, o secularismo</strong> e o <strong>compromisso com religiões tradicionais</strong>, como o xintoísmo e o budismo, dificultam o avanço do cristianismo no Japão.</p>
+       <p>Embora o <strong>portal oficial de Missões Mundiais</strong> não apresente informações detalhadas sobre o campo no Japão, <strong>há missionários atuando no país</strong>, dedicando-se à <strong>plantação de igrejas</strong>, ao <strong>discipulado de novos convertidos</strong> e ao <strong>acompanhamento de pessoas que buscam sentido para a vida</strong>.</p>
+       <p>O trabalho missionário no Japão é desafiador, mas essencial para <strong>levar luz e esperança em meio à frieza espiritual</strong> que marca a sociedade japonesa.</p>
+      `],
     missionarios: [
-         "João Luiz Dutra"
-        ],
-    projetos: [ "PEPE",
-
-    ] 
+     "Jorge Luis Siqueira Do Nascimento"
+    ], 
+  projetos: [
+   "DNA Missionário"
+  ] 
 },
-  "Japão": { informaçoes:[
-
-  ],
-    missionarios: [
-         "Jorge Luis Siqueira Do Nascimento"
-        ], 
-    projetos: [
-
-    ] 
-},
-  "Portugal": { missionarios: [
-         "Alcir Almeida De Souza",
-         "Cesar Augusto Corsete", 
-         "Claudio Elivan Santos da Silva", 
-         "Debora Anahi Vazquez Zarate", 
-         "Jose Calixto Patricio"
-        ], 
-    projetos: [
-
-    ] 
-},
+  
   "Colombia": {
   "informacoes": [`
-    <img src="https://revistashowdafe.com.br/wp-content/uploads/2023/08/colombia-by-flavia-carpio-unsplash.jpg" alt="colombia" style="width:100%;margin-top:10px;">
+    <img src="https://www.missoesmundiais.com.br/images/noticias/2025/03/PEPE-Colombia_principal.jpg" alt="colombia" style="width:100%;margin-top:10px;">
     <p>O tráfico de drogas forçou muitas pessoas a se deslocarem de suas casas. Após décadas de violência extrema, a Colômbia experimenta uma relativa paz. Ainda há grandes problemas com guerrilha, grupos paramilitares e narcotráfico, mas há esperança de melhora.</p>
     <p>A herança do período mais violento se faz presente no alto número de crianças que vivem nas ruas e de dependentes químicos. Cerca de seis milhões de colombianos foram expulsos de suas moradias tornando-se refugiados em seu próprio país.</p>
     <p>Agora há a chegada de um grande número de venezuelanos, sendo o país que mais os recebe. As estimativas são de que já há mais de um milhão de venezuelanos na Colômbia.</p>
@@ -464,72 +781,114 @@ const data = {
 },
   "Brasil": {
     informacoes: [
-      `<img src="https://missoesnacionais.org.br/wp-content/uploads/2023/10/1907-1917-William-Buck-Bagby-e-Anne-Luther-Bagby-Pioneiros-em-Missoes-no-Brasil-Foto-International-Mission-Board-1-3.jpg" alt="William Buck Bagby e Anne Luther Bagby" style="width:100%;margin-top:10px;">
-      <p><strong>William e Anne Bagby</strong> foram figuras centrais no início das missões batistas no Brasil. Seu trabalho missionário abriu caminhos importantes para a expansão do evangelho no país e inspirou gerações de cristãos comprometidos com a missão.</p>
-    <p>O legado dos Bagby vai além das estruturas criadas — está vivo na fé de milhares de brasileiros que foram alcançados por meio do compromisso desses pioneiros.</p>
-    <ul>
-      <li>Organização da Junta de Evangelização Nacional, mais tarde, Junta de Missões Nacionais;</li>
-      <li>Criação da Sede da JMN, na cidade de Campos, RJ;</li>
-      <li>O primeiro missionário enviado foi Crispiniano Dario da Silva;</li>
-      <li>Organização de 2 igrejas, no Acre e em Santa Catarina;</li>
-      <li>Realização de 15 batismos em Paranaguá-PR, por William Buck Bagby.</li>
-    </ul>
-       `
-    ],
+     `<img src="https://missoesnacionais.org.br/wp-content/uploads/2023/10/1907-1917-William-Buck-Bagby-e-Anne-Luther-Bagby-Pioneiros-em-Missoes-no-Brasil-Foto-International-Mission-Board-1-3.jpg" alt="William Buck Bagby e Anne Luther Bagby" style="width:100%;margin-top:10px;">
+     <p><strong>William e Anne Bagby</strong> foram figuras centrais no início das missões batistas no Brasil. Seu trabalho missionário abriu caminhos importantes para a expansão do evangelho no país e inspirou gerações de cristãos comprometidos com a missão.</p>
+     <p>O legado dos Bagby vai além das estruturas criadas — está vivo na fé de milhares de brasileiros que foram alcançados por meio do compromisso desses pioneiros.</p>
+     <ul>
+     <li>Organização da Junta de Evangelização Nacional, mais tarde, Junta de Missões Nacionais;</li>
+     <li>Criação da Sede da JMN, na cidade de Campos, RJ;</li>
+     <li>O primeiro missionário enviado foi Crispiniano Dario da Silva;</li>
+     <li>Organização de 2 igrejas, no Acre e em Santa Catarina;</li>
+     <li>Realização de 15 batismos em Paranaguá-PR, por William Buck Bagby.</li>
+     </ul>
+    `],
+   missionarios: [
+     "Adel Khosravi", 
+     "Analzira Pereira Do Nascimento",     
+     "Joel Martiniano Pinto", 
+     "Luciana de Oliveira Nascimento",    
+     "Mauricio Barros Bastos",   
+     "Levi Correia Godinho",      
+     "Monica Felícia Peixoto",   
+     "Renata Santos De Oliveira", 
+     "Rodrigo da Cunha Carvalho", 
+     "Terezinha Aparecida de Lima Candieiro"
+    ], 
+  projetos: [
+   "RADICAL BRASIL", 
+   "Cristolândia",    
+   "Cristolândia Criança",
+   "Lar Batista", 
+   "VIVER",
+   "Sons da Missão",  
+   "Vila Minha Pátria",   
+   "Colégio Batista de Carolina",   
+   "Capelania Prisional Batista",   
+   "Rede de Ação e Desenvolvimento Social (RADS)", 
+   "Rede 3.16", 
+   "Missões com Surdos",
+   "Viver Escola",
+   "Programa Somos UM: Universitários Missionários",
+  ],
+},
+  "Tailândia": {
+    informacoes:[`
+       <img src="https://cdn.comunhao.com.br/wp-content/uploads/2021/07/12120855/tai.jpg" alt="Tailandia" style="width:100%;margin-top:10px;">
+       <p><strong>Tailândia</strong>, localizada no <strong>Sudeste Asiático</strong>, é conhecida por sua cultura rica, templos budistas e espiritualidade marcada por tradições religiosas milenares. A maioria da população é <strong>budista</strong>, e o cristianismo representa menos de 1% da população.</p>
+       <p>Apesar da liberdade religiosa formal, há <strong>barreiras culturais profundas</strong> que dificultam a conversão ao cristianismo. O evangelho é muitas vezes visto como uma ameaça à identidade nacional e familiar.</p>
+       <p>Embora o <strong>portal oficial de Missões Mundiais</strong> não apresente informações detalhadas sobre a Tailândia, <strong>há missionários atuando no país</strong>, desenvolvendo projetos de <strong>plantação de igrejas, discipulado</strong> e <strong>ações sociais</strong> que demonstram o amor de Cristo ao povo tailandês.</p>
+       <p>O trabalho missionário tem sido importante para <strong>alcançar corações em meio à religiosidade tradicional</strong> e levar esperança onde ainda há resistência à fé cristã.</p>
+      `],
     missionarios: [
-         "Adel Khosravi", 
-         "Analzira Pereira Do Nascimento", 
-         "Joel Martiniano Pinto", 
-         "Luciana de Oliveira Nascimento", 
-         "Mauricio Barros Bastos", 
-         "Levi Correia Godinho", 
-         "Monica Felícia Peixoto", 
-         "Renata Santos De Oliveira", 
-         "Rodrigo da Cunha Carvalho", 
-         "Terezinha Aparecida de Lima Candieiro"
-        ], 
-    projetos: [
-
+     "Marcia Isane Soares Fernandes"
     ],
+  projetos: [
+   "sem informções no momento"
+ ],
 },
-  "Ucrânia": { missionarios: [
-         "Anatoliy Shmilikhovskyy",
-         "Lyubomyr Matveiev"
-        ], 
-    projetos: [
-
-    ] 
+  "Equador": { 
+      informacoes:[`
+       <img src="https://www.missoesmundiais.com.br/images/noticias/2019/05/sembradores_principal.jpg" alt="Equador" style="width:100%;margin-top:10px;">
+       <p><strong>Equador</strong>, localizado no <strong>noroeste da América do Sul</strong>, tem cerca de <strong>16 milhões de habitantes</strong> e seu território é cortado pela <strong>cordilheira dos Andes</strong>. A economia é impulsionada pela produção de <strong>banana, café, cacau</strong> e, principalmente, pela exportação de <strong>petróleo</strong>, que representa metade das exportações.</p>
+       <p>De maioria <strong>católica (mais de 90%)</strong>, a população equatoriana é formada majoritariamente por <strong>descendentes de europeus e indígenas</strong>. O país adotou o <strong>dólar americano</strong> como moeda oficial no ano 2000, após uma grave crise econômica.</p>
+       <p><strong>Missões Mundiais</strong> atua no Equador desde <strong>1981</strong>, com foco em <strong>plantação e revitalização de igrejas, capacitação de líderes e capelania</strong>.</p>
+       <p>Um dos desafios atuais é a <strong>rejeição a refugiados venezuelanos</strong>, que têm sido vítimas de <strong>violência, xenofobia e desconfiança</strong>. Isso tem afetado diretamente o trabalho evangelístico entre eles. Ainda assim, <strong>Missões Mundiais permanece firme</strong>, sendo um canal de <strong>esperança, acolhimento e reconciliação</strong>.</p>
+      `],
+    missionarios: [
+     "Marta do Carmo"
+    ],
+  projetos: [
+   "PEPE"
+ ]
 },
-  "Tailândia": { missionarios: [
-         "Marcia Isane Soares Fernandes"
-        ], 
-    projetos: [
-
-    ] 
+  "Peru": { 
+      informacoes:[`
+       <img src="https://www.missoesmundiais.com.br/images/headers/continentes/america/peru-foto.jpg" alt="Peru" style="width:100%;margin-top:10px;">
+       <p><strong>Peru</strong> enfrenta grandes desafios sociais e espirituais. Mais de <strong>20% da população vive abaixo da linha da pobreza</strong>, especialmente em áreas rurais e na selva amazônica.</p>
+       <p>Na região de selva vivem <strong>nove povos considerados não alcançados</strong>, em áreas com pouca ou nenhuma presença do evangelho. Esses grupos enfrentam isolamento e têm acesso limitado a serviços básicos.</p>
+       <p><strong>Missões Mundiais</strong> atua no país com o propósito de promover <strong>justiça social</strong> e levar o evangelho a esses povos remotos, sendo um canal de <strong>esperança e transformação espiritual</strong> nas regiões menos alcançadas do Peru.</p>
+      `],
+    missionarios: [
+     "Carlos Ricardo Rodríguez", 
+     "Pedro Carreon"
+    ], 
+  projetos: [
+   "PEPE",
+   "Quero Viver",
+  ] 
 },
-  "Equador": { missionarios: [
-         "Marta do Carmo"
-        ],
-    projetos: [
-
-    ]
+  "Chile": { 
+     informacoes:[`
+       img src="https://www.missoesmundiais.com.br/images/noticias/2024/05/Chile_principal.jpg" alt="CHILE  " style="width:100%;margin-top:10px;">
+       <p>O <strong>Chile</strong> é um dos campos mais antigos de Missões Mundiais, com seu primeiro obreiro, <strong>Wenceslao Valdivia</strong>, sendo um marco na história do país. A presença de obreiros brasileiros começou oficialmente nos anos 1980.</p>
+       <p>Em <strong>1973</strong>, o Chile vivenciou um golpe militar, iniciado por <strong>Augusto Pinochet</strong>, que resultou em um regime autoritário até 1990, com consequências profundas ainda presentes.</p>
+       <p>Atualmente, o <strong>Chile</strong> é um dos países mais desenvolvidos da América do Sul, mas enfrenta sérios desafios, como altos índices de suicídio no norte, refletindo uma realidade de tristeza e depressão apesar das boas condições econômicas.</p>
+      `],
+    missionarios: [
+       "Nilton de Freitas Antunes"
+      ], 
+  projetos: [
+   "PEPE",
+  ] 
 },
-  "Peru": { missionarios: [
-         "Carlos Ricardo Rodríguez", 
-         "Pedro Carreon"
-        ], 
-    projetos: [
-
-    ] 
-},
-  "Chile": { missionarios: [
-         "Nilton de Freitas Antunes"
-        ], 
-projetos: [
-
-] 
-},
-  "Moçambique": { missionarios: [
+  "Moçambique": {
+    informacoes:[`<img src="https://missoesmundiais.com.br/images/noticias/2019/05/igrejasmocambique_principal.jpg" alt=Moçambique ="width:100%;margin-top:10px;">
+    <p><strong>Moçambique</strong>, ex-colônia portuguesa no sudeste da África, tem cerca de 26,5 milhões de habitantes. O <strong>cristianismo</strong> é a religião predominante, especialmente o <strong>catolicismo</strong>, mas há forte presença do <strong>sincretismo religioso</strong> com tradições animistas.</p>
+  <p>Embora o <strong>português</strong> seja o idioma oficial, a maioria da população se comunica por meio de <strong>dialetos locais</strong>.</p>
+  <p>O país enfrenta sérias dificuldades sociais: falta de infraestrutura básica como <strong>água, luz, saneamento</strong>, além de índices alarmantes de <strong>desnutrição infantil</strong>. Apesar da exploração de petróleo, gás natural e minérios, a riqueza gerada não é distribuída de forma justa.</p>
+  <p><strong>Missões Mundiais</strong> iniciou sua atuação no continente africano por Moçambique, em <strong>1971</strong>, e desde então tem sido um <strong>instrumento vital na transformação espiritual e social</strong> do país.</p>
+  <p>Após o <strong>ciclone Idai</strong> em 2019, que causou grande destruição e mortes, projetos missionários nas cidades da Beira e Dondo foram interrompidos, mas <strong>retomados graças à mobilização de voluntários, intercessores e ofertantes</strong>. O trabalho continua firme, levando o amor de Cristo ao povo moçambicano.</p>`],
+    missionarios: [
          "Edvaldo Marcolino", 
          "Noemia Gabriel Cessito", 
          "Rawderson Rangel Porto Pereira"
@@ -541,54 +900,42 @@ projetos: [
      "Sublime Tarefa", 
      "Ummi", 
      "Videira"] },
-  "Espanha": { missionarios: [
-         "Adoniram Judson Pires", 
-         "Armando de Oliveira Neto", 
-         "David Bianchi Ojeda", 
-         "Paulo Cesar Pagaciov"
-        ], 
-    projetos: [
 
-    ] 
+  "Haiti": { 
+     informacoes:[`
+       <img src="https://www.missoesmundiais.com.br/images/noticias/2021/08/choro_principal.jpg" alt="Haiti" style="width:100%;margin-top:10px;">
+       <p>O <strong>Haiti</strong> é um pequeno país localizado na parte ocidental da ilha Hispaniola, no Caribe, e faz fronteira terrestre com a <strong>República Dominicana</strong>. As línguas oficiais haitianas são o <strong>francês</strong> e o <strong>crioulo</strong>. O povo haitiano tem em sua tradição religiosa a prática do <strong>vodu</strong>.</p>
+       <p>Uma crise política em <strong>2004</strong>, quando o mandato dos parlamentares terminou sem a convocação de novas eleições e o presidente começou a governar por decreto, foi o estopim para a crise institucional que duraria alguns anos e se tornaria motivo para o envio de uma missão de paz da ONU liderada pelo <strong>Brasil</strong>.</p>
+       <p>Mas foi em <strong>2010</strong> que aconteceu a maior tragédia do país: um <strong>terremoto devastador</strong> matou centenas de milhares de haitianos e prejudicou as já precárias condições de vida da população.</p>
+       <p>O campo haitiano foi aberto oficialmente por <strong><span style="color: #e74c3c; font-weight: bold;">Missões Mundiais</span></strong> em <strong>2012</strong>. Porém, antes dessa data, o campo já era foco de ajudas humanitárias e evangelísticas, inclusive com o envio periódico de caravanas voluntárias. O trabalho no país cresceu. Além de já receber turmas do <strong>Radical Haiti</strong>, o número de missionários neste campo aumenta a cada dia. Nossa equipe atua em três áreas essenciais: <strong>Direitos da Criança e do Adolescente</strong>, <strong>Desenvolvimento Comunitário</strong> e <strong>Educação</strong>, na região de <strong>Porto Príncipe</strong> e no <strong>Sul do Haiti</strong>.</p>
+     `],
+   missionarios: [
+     "Reginald Pyrhus"
+    ], 
+  projetos: [
+    "PEPE"
+  ] 
 },
-  "Haiti": { missionarios: [
-         "Reginald Pyrhus"
-        ], 
-    projetos: [
-    
-    ] 
-},
-  "Timor Leste": { missionarios: [
-         "Silvania Maria Da Costa"
-        ], 
-    projetos: [
-
-    ] 
-},
-  "Guiné": { missionarios: [
-         "Vitor Rossetti"
-        ], 
-    projetos: [
-     "Esperança", 
-     "Estrela Brilhante", 
-     "Formação Teológica Básica", 
-     "Plantação de Igreja", 
-     "Semeando Vida", 
-     "PEPE"
-    ] 
-},
-  "São Tomé e Príncipe": { missionarios: [
-         "Abdulay De Souza Pereira Rosa", 
-         "Armindo Fausto", 
-         "Kamel Quaresma"
-        ], 
-    projetos: [
-     "Construção de templo e salas para o PEPE",
-     "Escolinha de Futebol Boa Semente", 
-     "Mãos Dadas", 
-     "PEPE", 
-     "Treinamento em Hermenêutica, Homilética e Direção de Culto"
-    ] 
+  "São Tomé e Príncipe": {
+     informacoes:[`
+       <img src="https://www.missoesmundiais.com.br/images/noticias/2020/09/haitist_principal-copy.jpg" alt="SÃO TOME E PRINCIPE" style="width:100%;margin-top:10px;">
+       <p>A <strong>liberdade de religião</strong> e de culto é considerada inviolável pela Constituição de <strong>São Tomé e Príncipe</strong>, e os cidadãos podem exercer esse direito abertamente sem encontrar muitos problemas.</p>
+       <p>O <strong>catolicismo</strong>, herança do colonizador português, é a religião mais seguida em São Tomé e Príncipe, segundo dados oficiais, mas <strong>crenças tradicionais</strong> e o <strong>sincretismo</strong> são muito presentes na cultura do país.</p>
+       <p><strong>Missões Mundiais</strong> tem um papel importante em alcançar as diversas comunidades de São Tomé e Príncipe, levando o evangelho e promovendo a transformação espiritual, além de ajudar no desenvolvimento social e cultural do país.</p>
+       <p><strong>São Tomé e Príncipe</strong> é uma ex-colônia de Portugal. A pequena nação é formada por duas ilhas principais situadas no Golfo da Guiné e a cerca de 300 quilômetros da costa da África continental. Tem apenas cerca de <strong>200 mil habitantes</strong> e é também o <strong>menor país de língua portuguesa</strong>.</p>
+      `],
+    missionarios: [
+     "Abdulay De Souza Pereira Rosa", 
+     "Armindo Fausto", 
+     "Kamel Quaresma"
+    ], 
+  projetos: [
+   "Construção de templo e salas para o PEPE",
+   "Escolinha de Futebol Boa Semente", 
+   "Mãos Dadas", 
+   "PEPE", 
+   "Treinamento em Hermenêutica, Homilética e Direção de Culto"
+  ] 
 }
 
 };
@@ -702,7 +1049,22 @@ const riscoContinentes = {
          "Wajih Yagoot", 
          "Yan Lima"
         ],
-  "Oriente Médio": ["Missionária A", "Missionário B"]
+  "América": 
+        [
+         "Abu Yuhana Alves", 
+         "Eline Cuvello",
+         "Gabriela Mendes",
+         "Ibrahim Gomes",
+         "Luis Alberto Bernal",
+         "Marco Antonio",
+         "Pablo Carhuachin",
+         "Pierre Souza",
+         "Wang Li",
+        ],
+ "Europa": 
+        ["Aquila Dantas",
+         "Davi Vasconcelos"
+        ],
 };
 const coords = {
   "Benin": [9.3075, 2.3158],
@@ -750,19 +1112,15 @@ const coords = {
   "Venezuela": [6.4238, -66.5897],
   "Benin": [9.3075, 2.3158],
   "Botsuana": [-22.3285, 24.6849],
-  "Burkina Faso": [12.2383, -1.5616],
   "Cabo Verde": [16.5388, -23.0418],
-  "Togo": [8.6195, 0.8248],
-  "Polônia": [51.9194, 19.1451],
-  "Suíça": [46.8182, 8.2275],
-  "Filipinas": [12.8797, 121.7740],
-  "Nepal": [28.3949, 84.1240],
-  "Papua Nova Guiné": [-6.3149, 143.9555]
+  "África do Sul": [-30.14879200322524, 24.265244652167283],
+  "França": [46.32027763563794, 2.342435781983713],
 };
 const riscoCoords = {
   "África": [9.331734649367618, 23.527939521223143],
   "Ásia": [63.270140376411554, 82.34549367708495],
-  "Oriente Médio": [34.51718305759104, 64.76739166412801]
+  "América": [12.17141921473344, -71.8713734580396],
+  "Europa": [54.10256767977201, 28.242302925534563]
 };
 
 function createPopupContent(country) {
@@ -794,7 +1152,7 @@ function addBlinkingMarker(country, lat, lng) {
 
   const marker = L.marker([lat, lng], {
   icon: L.divIcon({
-    className: 'transparent-icon', // usamos uma classe personalizada
+    className: 'transparent-icon', 
     html: '<div class="pulse-circle"></div>',
     iconSize: [20, 20],
     iconAnchor: [10, 10]
@@ -837,26 +1195,52 @@ function addBlinkingMarker(country, lat, lng) {
 }, 100);
   });
 }
+const riscoProjetos = {
+  "América": [
+    "Projeto PEPE"
+  ],
+  "Ásia": [
+    "PEPE SUL DA ÁSIA"
+  ],
+  "África": [
+    "PEPE ÁFRICA OCIDENTAL-1",
+    "PEPE ÁFRICA OCIDENTAL-2"
+  ]
+};
+
 const riscoInformacoes = {
-  "África": `
-    <p><strong>Atenção:</strong> Em diversas regiões da África, missionários enfrentam riscos relacionados à instabilidade política, conflitos armados e perseguição religiosa.</p>
-    <p>Ore por proteção, sabedoria e estratégias eficazes para os que atuam em ambientes hostis.</p>
+"África": `
+   <img src="https://lausanne.org/wp-content/uploads/2022/04/lga-persecution-in-nigeria-1.jpg" alt="Africa risco" style="width:100%;margin-top:10px;">
+   <p>Em alguns países na <strong>África</strong> e na <strong>Ásia</strong>, seguir a Cristo é motivo de perseguição. Muitas igrejas e crentes em Jesus precisam manter suas atividades em segredo para não serem pegos por extremistas de outras religiões ou, em vários casos, pelo próprio governo local.</p>
+   <p>Aproximadamente <strong>215 milhões de cristãos</strong> em todo o mundo experimentam hoje um alto ou extremo nível de perseguição; isso significa que 1 a cada 12 cristãos vive onde o cristianismo é ilegal, proibido ou punido.</p>
+   <p>Por esse motivo, não podemos divulgar alguns países onde atuamos. Apesar do risco, nossos missionários recebem todo auxílio necessário, sabendo que o maior cuidado vem do Senhor. Todos que vão para esses países como missionários ou são alcançados lá têm suas identidades preservadas.</p>
+   <p><strong>Missões Mundiais</strong> atua nesses lugares com diferentes projetos, desenvolvidos com base nas necessidades de cada povo. Além da plantação de igrejas, trabalhamos com auxílio médico e social, e trabalhos com esportes e educação.</p>
+   <p>Lucas Mota, um de nossos missionários na <strong>Ásia</strong>, conta que quase toda semana recebe relatórios que dão conta de diversos casos de perseguição registrados no país onde está. Os relatos passam de exclusão social, abuso, violência física, até prisão.</p>
+   <p>Pedimos que não deixe de orar pela <strong>igreja sofredora e perseguida</strong>. Clame incessantemente. Peça a Deus para que seu Espírito se manifeste poderosamente nestes países e que haja salvação e libertação; que mais pessoas passem das trevas à sua maravilhosa luz, e que mais obreiros continuem se levantando para abençoar estes povos.</p>
+`,
+     
+"Europa":`
+   <img src="https://cdn.oantagonista.com/uploads/2024/06/WhatsApp-Image-2024-06-07-at-08.27.42-1024x373.jpeg" alt="Risco Europa" tyle="width:100%;margin-top:10px;">
+   <p>Na <strong>Europa</strong>, embora a liberdade religiosa seja garantida em muitos países, existem locais onde a <strong>perseguição religiosa</strong> e a resistência ao evangelho são realidades persistentes. Em algumas nações, a indiferença religiosa ou a hostilidade à fé cristã dificultam o trabalho missionário, tornando-o um campo de grande desafio para aqueles que têm o chamado de levar a mensagem de Cristo.</p>
+   <p>Embora o nome de certos países não possa ser mencionado devido a questões de segurança, é essencial reconhecer que, mesmo diante dessa resistência, há missionários e grupos de <strong>Missões Mundiais</strong> que continuam a pregar, ensinar e compartilhar o evangelho, frequentemente em ambientes hostis. Eles enfrentam a rejeição, o isolamento e, em alguns casos, a ameaça de perseguição legal ou social, mas permanecem firmes na missão de espalhar a palavra de Deus.</p>
+   <p><strong>Missões Mundiais</strong> se dedica a apoiar essas iniciativas na Europa, fornecendo treinamento, recursos e, principalmente, orações. Mesmo em países onde a fé cristã está em declínio, o trabalho missionário continua a ser crucial, alcançando as novas gerações e aqueles que ainda não ouviram o evangelho.</p>
+   <p>Em muitas dessas regiões, os missionários vivem com o risco constante de enfrentarem a oposição, mas sua fé inabalável é um testemunho poderoso de que a missão de Deus não conhece fronteiras, mesmo quando se depara com desafios imensos. A Igreja mundial deve continuar a orar e apoiar esses missionários, sabendo que seu trabalho é vital para a expansão do Reino de Deus na Europa.</p>
   `,
-  "Ásia": `
-      <img src="data:image/jpeg;base64,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" alt="perseguição na Ásia" style="width:100%;margin-top:10px;">
-
-      <p><strong>Atenção:</strong> Em muitos países da África e Ásia, seguir a Cristo pode custar caro: há perseguição por parte de extremistas e até dos próprios governos. Por isso, igrejas e cristãos precisam se reunir em segredo. Estima-se que 215 milhões de cristãos enfrentam alto ou extremo nível de perseguição — 1 em cada 12 vive onde o cristianismo é proibido.
-
-      Por segurança, não divulgamos publicamente alguns países onde atuamos. Mesmo sob risco, nossos missionários seguem firmes, com apoio integral e proteção de Deus.
-
-      As ações incluem plantação de igrejas, assistência médica, projetos sociais, esportivos e educacionais. Missionários como Lucas Mota relatam perseguições frequentes, desde exclusão até prisões.</p>
-      <p>Ore pela igreja perseguida. Clame por salvação, libertação e por mais obreiros dispostos a levar a luz de Cristo aos povos em trevas.</p>
-    `,
-
-
-  "Oriente Médio": `
-    <p><strong>Atenção:</strong> O Oriente Médio é uma das regiões mais restritas à pregação do evangelho. A atuação missionária precisa ser cuidadosa, pois há riscos de prisão, perseguição e até morte.</p>
-    <p>Ore por estratégias criativas e por corações abertos à mensagem de Cristo.</p>
+"Ásia": `
+   <img src="https://setemargens.com/wp-content/uploads/2020/12/Iraque-AIS-co%CC%81pia.jpg" alt="perseguição na Ásia" style="width:100%;margin-top:10px;">
+   <p>Em vários países da <strong>África</strong> e da <strong>Ásia</strong>, seguir a Cristo significa correr risco real de perseguição. Igrejas e cristãos precisam manter suas atividades em segredo para evitar represálias de <strong>extremistas religiosos ou até do próprio governo</strong>.</p>
+   <p>Estima-se que <strong>215 milhões de cristãos</strong> no mundo enfrentam perseguição severa — 1 em cada 12 vive onde o cristianismo é ilegal ou punido.</p>
+   <p>Por isso, <strong>Missões Mundiais não pode divulgar todos os campos de atuação</strong>. Ainda assim, nossos missionários são cuidados e treinados para continuar levando o evangelho com sabedoria e coragem. Suas identidades são preservadas, e os projetos são adaptados à realidade de cada povo.</p> 
+   <p>Atuamos com <strong>plantação de igrejas, assistência médica e social, esportes e educação</strong>, sempre focando em demonstrar o amor de Cristo de maneira prática.</p>
+   <p>O missionário <strong>Lucas Mota</strong>, que serve na Ásia, relata <strong>casos semanais de perseguição</strong> em sua região, incluindo exclusão social, abusos, violência e prisões.</p>
+   <p><strong>Missões Mundiais tem sido essencial para alcançar esses povos em risco</strong>, mesmo em meio à perseguição. Ore pela <strong>igreja sofredora</strong>. Peça a Deus que continue levantando obreiros e derramando seu Espírito sobre esses lugares, para que mais pessoas passem das trevas para a luz.</p>
+  `,
+"América": `
+   <img src="https://cdn.comunhao.com.br/wp-content/uploads/2023/12/Igrejas-incendiadas-em-Manipur-fotor-20231228171132.jpg" alt="Risco america" style="width:100%;margin-top:10px;">
+   <p>Em várias partes das <strong>Américas</strong>, existem países onde a <strong>perseguição religiosa</strong> é uma realidade e a pregação do evangelho é altamente arriscada. Em muitos desses lugares, missionários e obreiros de <strong>Missões Mundiais</strong> enfrentam sérios desafios para levar a mensagem de Cristo, não apenas pela resistência das autoridades, mas também pela hostilidade de algumas comunidades.</p>
+   <p>Embora não possamos falar abertamente sobre os nomes de certos países devido aos riscos envolvidos, é importante destacar que, mesmo diante da perseguição, há homens e mulheres dedicados que, com coragem e fé, continuam a pregar o evangelho, muitas vezes em segredo. Eles enfrentam ameaças e dificuldades diárias, mas são movidos pelo amor de Deus e pela missão de alcançar aqueles que ainda não conhecem a verdade.</p>
+   <p><strong>Missões Mundiais</strong> está presente nesses países, apoiando missionários locais, orando por eles e oferecendo recursos e treinamento, sempre com um compromisso firme em avançar o reino de Deus, independentemente dos riscos. Eles são verdadeiros heróis da fé, cumprindo a Grande Comissão mesmo quando as condições são extremas e perigosas.</p>
+   <p>Esses missionários são exemplos de coragem e dedicação, e a igreja global deve se unir em oração por esses campos difíceis, sabendo que a obra missionária, mesmo em lugares de grande risco, continua a ser uma prioridade para o reino de Deus.</p>
   `
 };
 function addDangerMarker(continent, lat, lng, missionarios) {
@@ -873,15 +1257,24 @@ function addDangerMarker(continent, lat, lng, missionarios) {
       `
     })
   }).addTo(map);
-
+  const projetos = riscoProjetos[continent] || [];
   const popupContent = `
   <h3 style="margin-top: 0; font-size: 16px; font-weight: bold;">Área de Risco - ${continent}</h3>
+
   <button class="accordion">Informações</button>
   <div class="panel">
     ${riscoInformacoes[continent] || "<p>Sem informações disponíveis.</p>"}
   </div>
+
   <button class="accordion">Missionários</button>
-  <div class="panel"><ul>${missionarios.map(m => `<li>${m}</li>`).join("")}</ul></div>
+  <div class="panel">
+    <ul>${missionarios.map(m => `<li>${m}</li>`).join("")}</ul>
+  </div>
+
+  <button class="accordion">Projetos</button>
+  <div class="panel">
+    <ul>${(projetos || []).map(p => `<li>${p}</li>`).join("")}</ul>
+  </div>
 `;
 
   const popup = L.popup().setContent(popupContent);
