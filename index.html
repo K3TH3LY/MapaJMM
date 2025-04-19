@@ -22,6 +22,33 @@
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 2px #ffffff, 0 0 5px #ffffff, 0 0 10px #ffffff;
+  }
+  100% {
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 20px #ffffff;}
+}
+.instagram-footer {
+  text-align: center;
+  margin-top: 100px;
+  padding: 20px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.instagram-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.instagram-footer a:hover {
+  color: #5c88f7; /* muda de cor ao passar o mouse */
+}
     body {
       margin: 0;
       padding: 0;
@@ -925,5 +952,10 @@ function loopAnimation() {
     anim.play(direction);
   }, 1000);
 }
-</script></body>
+</script>
+<footer class="instagram-footer">
+	<a href="https://www.instagram.com/pib.novaangra/profilecard/?igsh=M21qbG9janFrNWRk" target="_blank">@PIB.NovaAngra</a>
+  </footer>
+  
+</body>
 </html>
